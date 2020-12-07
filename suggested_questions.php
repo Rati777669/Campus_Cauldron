@@ -57,8 +57,8 @@
         <table class="table" style="color: white">
           <thead>
             <tr>
-              <th width="20%">Questions for You!</th>
-              <th colspan=2 width="18%">Want to Answer!</th>
+              <th width="20%"><h2>Questions for You!</h2></th>
+              <th colspan=2 width="18%"><h2>Want to Answer!</h2></th>
             </tr>
           </thead>
 
@@ -69,7 +69,7 @@
             <tbody>
               <tr>
                 <td> <?php echo $row["question"]; ?> </td>
-                <td><a class="btn btn-outline-danger" href='answer_it.php?key1=<?php echo $row["id"]; ?>'>Answer it</a>
+                <td><a class="btn btn-light" href='answer_it.php?key1=<?php echo $row["id"]; ?>'>Answer it</a>
                 </td>
               </tr>
 
