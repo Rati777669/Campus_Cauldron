@@ -30,7 +30,6 @@
     padding: 10px;
   }
 
-
   @media (min-width: 768px) {
 
     .carousel-inner .active,
@@ -110,43 +109,16 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Links
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#after-intro">Notices</a>
-            <a class="dropdown-item" href="#after-notice">Gallery</a>
-            <a class="dropdown-item" href="#after-gallery">Clubs and Cells</a>
-            <a class="dropdown-item" href="#after-clubs">Events and Fests</a>
-            <a class="dropdown-item" href="#after-fests">FAQs</a>
-            <a class="dropdown-item" href="#after-questions">College Map</a>
-
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ask.php">Ask</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
-        </li>
-      </ul>
-
-
+      <?php
+      include 'include/navbar.php';
+      ?>
       <?php
       if (!isset($_SESSION['email'])) {
 
       ?>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="admin_login.php"><i class="fas fa-lock"></i>Admin Login</a>
+            <a class="nav-link" href="admin_login.php"><i class="fas fa-lock icon"></i>Admin Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sign-in.php">Sign In</a>
@@ -160,18 +132,20 @@
         $sql1 = "select * from users WHERE email='" . $_SESSION['email'] . "'";
         $rs_result1 = mysqli_query($con, $sql1);
         $roww = mysqli_fetch_assoc($rs_result1);
-      ?><ul>
-          <li class="nav-item dropdown dropleft">
+      ?><ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user-circle"></i><?php echo $roww['username']; ?>
+              <i class="fa icon fa-user-circle"></i><?php echo $roww['username']; ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="userprofile.php?id=<?php echo $roww["userid"]; ?>">View Profile</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
+
             </div>
-          </li>
-        <?php } ?>
         </ul>
+      <?php
+      }
+      ?>
     </div>
   </nav>
 
@@ -201,24 +175,25 @@
           <div class="notice-panel">
             <h3 class="notice-head"><i class="icon far fa-calendar-alt"></i>Notices</h3>
             <marquee height="510" direction="up" scrollamount="3">
-              <p><a class="notice-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>Date: 19/03/2020
-                  <hr>
-                </a></p>
-              <p><a class="notice-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>Date: 19/03/2020
-                  <hr>
-                </a></p>
-              <p><a class="notice-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>Date: 19/03/2020
-                  <hr>
-                </a></p>
-              <p><a class="notice-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>Date: 19/03/2020
-                  <hr>
-                </a></p>
-              <p><a class="notice-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>Date: 19/03/2020
-                  <hr>
-                </a></p>
-              <p><a class="notice-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>Date: 19/03/2020
-                  <hr>
-                </a></p>
+              <?php
+              include 'conn.php';
+
+              $sql = "select * from notice ORDER BY notice_id DESC";
+              $rs_result = mysqli_query($con, $sql);
+              ?>
+              <?php
+              while ($row = mysqli_fetch_assoc($rs_result)) {
+              ?>
+                <p><a class="notice-link" href="#">
+                    <strong style="font-family: 'Montserrat', sans-serif; font-size:20px;"><?php echo $row["title"]; ?></strong>
+                    <br>
+                    <em>Date: <?php echo $row["date"]; ?></em>
+
+                    <hr>
+                  </a></p>
+              <?php
+              };
+              ?>
             </marquee>
           </div>
         </div>
@@ -309,79 +284,26 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <a class="div-link" href="#">
-            <div class="my-card">
-              <img href="#" src="images/CODE.png" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h4><b>CODE</b></h4>
-                <p>Club Of DEvelpoers</p>
+          <?php
+          include 'conn.php';
+          $sql = "select * from club ORDER BY club_id DESC";
+          $rs_result = mysqli_query($con, $sql);
+          ?>
+          <?php
+          while ($row = mysqli_fetch_assoc($rs_result)) {
+          ?>
+            <a class="div-link" href="#">
+              <div class="my-card">
+                <img href="#" src="club_logo/<?php print $row["club_logo"]; ?>" alt="Avatar" style="width:100%">
+                <div class="container">
+                  <h4><b><?php print $row["club_name"]; ?></b></h4>
+                  <p><?php echo $row["club_info"]; ?></p>
+                </div>
               </div>
-            </div>
-          </a>
-          <br>
-          <a class="div-link" href="#">
-            <div class="my-card">
-              <img src="images/FAH.jpg" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h4><b>FAH</b></h4>
-                <p>Fine Arts and Hobbies</p>
-              </div>
-            </div>
-          </a>
-          <br>
-          <a class="div-link" href="#">
-            <div id="CSC-img" class="my-card">
-              <img src="images/CSC.jpg" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h4><b>CSC</b></h4>
-                <p>Cultural Sub Council</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a class="div-link" href="#">
-            <div class="my-card">
-              <img src="images/IAI.jpg" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h4><b>Innovation And Incubation Cell</b></h4>
-                <p></p>
-              </div>
-            </div>
-          </a>
-          <br>
-          <a class="div-link" href="#">
-            <div class="my-card">
-              <img src="images/SSC.jpg" alt="Avatar" style="width:100%">
-              <div class="container">
-                <h4><b>Sports Sub Council</b></h4>
-                <p></p>
-              </div>
-            </div>
-          </a>
-          <br>
-
-        </div>
-        <div class="col-lg-4">
-          <a class="div-link" href="#">
-            <div class="my-card">
-              <img id="TPC-img" src="images/TPC.png" alt="Avatar">
-              <div class="container">
-                <h4><b>TPC</b></h4>
-                <p>Training And Placement Cell</p>
-              </div>
-            </div>
-          </a>
-          <br>
-          <a class="div-link" href="#">
-            <div class="my-card">
-              <img id="TDL-img" src="images/TDL.jpg" alt="Avatar">
-              <div class="container">
-                <h4><b>TDL</b></h4>
-                <p>The Drone Learners Club</p>
-              </div>
-            </div>
-          </a>
+            </a>
+          <?php
+          };
+          ?>
         </div>
       </div>
     </div>
@@ -395,48 +317,31 @@
     <div class="container-fluid">
       <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
         <div class="carousel-inner row w-10 mxauto" role="listbox">
+          <?php
+          include 'conn.php';
+          $sql = "select * from event ORDER BY event_id DESC";
+          $rs_result = mysqli_query($con, $sql);
+          ?>
           <div class="carousel-item col-md-4 active">
-            <img class="my-img img-fluid mx-auto d-bloc" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide 1">
+            <img class="my-img img-fluid mx-auto d-bloc" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide">
             <div class="carousel-caption d-none d-md-block">
               <h5>Magnum Opus</h5>
               <p>A Magnificent Event For Magnificent Personas!</p>
             </div>
           </div>
-          <div class="carousel-item col-md-4">
-            <img class="my-img img-fluid mx-auto d-block" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide 2">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Sopan</h5>
-              <p>A Literary Fest For All Enthusiasts!</p>
+          <?php
+          while ($row = mysqli_fetch_assoc($rs_result)) {
+          ?>
+            <div class="carousel-item col-md-4">
+              <img class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"]?>" alt="slides">
+              <div class="carousel-caption d-none d-md-block">
+                <h5><?php echo $row["event_name"] ?></h5>
+                <p><?php echo $row["council_name"] ?></p>
+              </div>
             </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <img class="my-img img-fluid mx-auto d-block" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide 3">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Prabhanjan</h5>
-              <p>A Festival For Sports And Games!</p>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <img class="my-img img-fluid mx-auto d-block" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide 4">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Utsav</h5>
-              <p>A Festival Calls!</p>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <img class="my-img img-fluid mx-auto d-block" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide 5">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Abhinandan</h5>
-              <p>A Jubiliant Event To Welcome The Students To The Rich Culture Of BIET!</p>
-            </div>
-          </div>
-          <div class="carousel-item col-md-4">
-            <img class="my-img img-fluid mx-auto d-block" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide 6">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>PACE</h5>
-              <p>A Sports Event Where Each Branch Shows Their Pace!</p>
-            </div>
-          </div>
+          <?php
+          };
+          ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
           <i class="fa fa-chevron-left fa-lg text-muted"></i>
@@ -459,7 +364,33 @@
   <section style="text-align:center;">
     <h1 class="events-head">FAQs</h1>
     <div class="container">
+      <?php
+      include 'conn.php';
+      $sql = "select * from faq ORDER BY faq_id DESC";
+      $rs_result = mysqli_query($con, $sql);
+      ?>
       <div class="accordion " id="accordionExample">
+
+        <?php
+        while ($row = mysqli_fetch_assoc($rs_result)) {
+        ?>
+          <div class="card">
+            <div style="background-color: #31326f;" class=" card-header" id="headingOne">
+              <h1 class="question mb-0">
+                <button style="color:white;" class="btn  btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h2><?php echo $row["question"]; ?></h2>
+                </button>
+              </h1>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div style="color: black; background-color:white;" class="card-body ">
+                <h4 class="answer"><?php echo $row["answer"]; ?></h4>
+              </div>
+            </div>
+          </div>
+        <?php
+        };
+        ?>
         <div class="card">
           <div style="background-color: #31326f;" class=" card-header" id="headingOne">
             <h1 class="question mb-0">
@@ -475,6 +406,7 @@
             </div>
           </div>
         </div>
+
         <div class="card">
           <div style="background-color: #31326f;" class="card-header" id="headingTwo">
             <h1 class="question mb-0">

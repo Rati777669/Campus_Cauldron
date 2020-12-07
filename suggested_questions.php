@@ -1,39 +1,6 @@
 <?php
-
-include 'conn.php';
-if (isset($_POST['username'])) {
-  $username = $_POST['username'];
-  $phone = $_POST['phone'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  if (!empty($username) || !empty($email) || !empty($phone) || !empty($password)) {
-    if (isset($_POST['password']) && $_POST['password'] !== $_POST['confirm_password']) {
-      echo "<script type='text/javascript'>alert('The two passwords do not match'); window.location.href = 'sign-up.php';</script>";
-    } else {
-      $query = @mysqli_query($con, "SELECT * FROM users WHERE email='$email' LIMIT 1;");
-      if (mysqli_num_rows($query) > 0) {
-        $row = mysqli_fetch_assoc($query);
-        if ($email == isset($row['email'])) {
-          echo "<script type='text/javascript'>alert('Email already exists');</script>";
-        }
-      } else {
-        $ins = mysqli_query($con, "insert into users(username,email,phone,password) values('$username','$email','$phone','$password')");
-        if ($ins > 0) {
-          @session_start();
-          $_SESSION['email'] = $email; 
-          echo "<script type='text/javascript'>alert('You are successfully registered.'); window.location.href = 'index.php';</script>";
-        } else {
-          echo "An error in database query";
-        }
-      }
-    }
-  } else {
-    echo "All fields are required";
-  }
-}
+@session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -52,85 +19,80 @@ if (isset($_POST['username'])) {
   <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
-<!-- FOR EVENTS AND FESTS -->
-<style>
-  .card .form-container button {
-    background-color: #31326f;
-    color: white;
-    border: none;
-    border-radius: 4px;
-  }
-
-  .card .form-container button:hover {
-    background-color: #414292;
-  }
-</style>
 
 <body style="background-image: url('images/img11.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;">
-
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark my-bg">
-    <a class="navbar-brand" href="index.php">Campus Cauldron</a>
+    <a class="navbar-brand" href="#">Campus Cauldron</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <?php
+      <?php
       include 'include/navbar.php';
       ?>
+
     </div>
   </nav>
   <br><br>
   <center>
-    <section class="sign-in" style="width: 30rem;">
-      <div class="card">
-        <div class="card-body">
-          <div class="form-container">
-            <div class="row">
+    <section class="sug_ques">
+      <div class="container-fluid">
+        <?php
+        include 'conn.php';
+        if (isset($_GET["page"])) {
+          $page = $_GET["page"];
+        } else {
+          $page = 1;
+        };
+        $start_from = ($page - 1) * 20;
+        $sql = "select * from q_and_a WHERE ques_answered<>1 ORDER BY id DESC LIMIT $start_from, 20 ";
+        $rs_result = mysqli_query($con, $sql);
+        ?>
+        
+        <table class="table" style="color: white">
+          <thead>
+            <tr>
+              <th width="20%">Questions for You!</th>
+              <th colspan=2 width="18%">Want to Answer!</th>
+            </tr>
+          </thead>
 
-              <div class="col-lg-12 white-background">
-                <h2 class="sign-up-head">Sign Up to Campus Cauldron!</h2>
-                <form action="#" method="POST">
+          <?php
+          while ($row = mysqli_fetch_assoc($rs_result)) {
+          ?>
 
-                  <div style="text-align:left" class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="Name" required>
-                  </div>
-                  <div style="text-align:left" class="form-group">
-                    <label>Phone</label>
-                    <input type="digits" class="form-control" id="number" name="phone" placeholder="Mobile no.">
-                  </div>
-                  <div style="text-align:left" class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-                  </div>
-                  <div style="text-align:left" class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                  </div>
-                  <div style="text-align:left" class="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" id="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
-                  </div>
-                  <div style="text-align:left">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="checkbox">I agree to terms and Conditions</label>
-                  </div>
-                  <button type="submit" name="submit" class="btn btn-primary btn-block">SUBMIT</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+            <tbody>
+              <tr>
+                <td> <?php echo $row["question"]; ?> </td>
+                <td><a class="btn btn-outline-danger" href='answer_it.php?key1=<?php echo $row["id"]; ?>'>Answer it</a>
+                </td>
+              </tr>
+
+            </tbody>
+
+          <?php
+          };
+          ?>
+        </table>
+        <strong>Pages </strong>
+
+
+        <!-- STOP WORK HERE -->
+
+
+
       </div>
-
+      <!-- /.container-fluid -->
 
     </section>
   </center>
+
+
   <!-- FOOTER EXPERIMENT -->
   <br><br>
   <!-- Footer -->
@@ -156,16 +118,16 @@ if (isset($_POST['username'])) {
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Links</h6>
             <p>
-              <a class="footer-link" href="index.php#after-intro">Notice</a>
+              <a class="footer-link" href="#after-intro">Notice</a>
             </p>
             <p>
-              <a class="footer-link" href="index.php#after-questions">Gallery</a>
+              <a class="footer-link" href="#after-questions">Gallery</a>
             </p>
             <p>
-              <a class="footer-link" href="index.php#after-gallery">Clubs and Cells</a>
+              <a class="footer-link" href="#after-gallery">Clubs and Cells</a>
             </p>
             <p>
-              <a class="footer-link" href="index.php#after-clubs">Events and Fests</a>
+              <a class="footer-link" href="#after-clubs">Events and Fests</a>
             </p>
           </div>
           <!-- Grid column -->

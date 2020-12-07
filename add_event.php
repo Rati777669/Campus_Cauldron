@@ -2,21 +2,34 @@
 @session_start();
 include 'include/security.php'
 ?>
-<?php
-include 'conn.php';
 
-if (isset($_POST['event_name'])) {
+<?php
+if (isset($_POST['submit'])) {
     $event_name = $_POST['event_name'];
     $council_name = $_POST['council_name'];
     $event_date = $_POST['event_date'];
     $event_link = $_POST['event_link'];
     $event_info = $_POST['event_info'];
-    if (isset($_POST['event_name'])) {
-        $ins = mysqli_query($con, "INSERT INTO event (event_name, council_name, event_date, event_link, event_info) VALUES('$event_name','$council_name','$event_date', '$event_link', '$event_info')");
-        if ($ins > 0) {
-            echo "<script type='text/javascript'>alert('Event added'); window.location.href = 'admin_index.php';</script>";
+
+    extract($_FILES);
+    $images = time() . $image['name'];
+
+    if (empty($event_name)) {
+        echo " <div class='alert alert-danger'><strong>ERROR</strong> - Empty fields are not allowed !</div>";
+    } else {
+        include 'conn.php';
+        $location = "event_img/";
+        $tmp = $image['tmp_name'];
+        move_uploaded_file($tmp, $location . $images);
+
+        $query = "INSERT INTO event (event_name, council_name, event_date, event_link, event_info,event_img) VALUES('$event_name','$council_name','$event_date', '$event_link', '$event_info','$images')";
+        if (mysqli_query($con, $query)) {
+            echo "<script type='text/javascript'>
+    alert('New event has been successfully added.');
+    window.location.href = 'admin_index.php';
+</script>";
         } else {
-            echo "An error in database query";
+            echo "error";
         }
     }
 }
@@ -83,7 +96,7 @@ if (isset($_POST['event_name'])) {
                                             <h1 class="h4 text-gray-900 mb-4">Add Event</h1>
                                         </div>
 
-                                        <form class="user" method="POST" action="#">
+                                        <form class="user" method="POST" action="#" enctype="multipart/form-data" name="upload">
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-user" id="" name="event_name" placeholder="Event Name" required>
                                             </div>
@@ -98,6 +111,12 @@ if (isset($_POST['event_name'])) {
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-user" id="" name="event_info" placeholder="Event Info" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <div>
+                                                    <p>Please upload Image</p>
+                                                    <input name="image" type="file" id="img">
+                                                </div>
                                             </div>
                                             <button href="add_event.php" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
                                                 Submit</button>
@@ -115,11 +134,6 @@ if (isset($_POST['event_name'])) {
                 <a class="scroll-to-top rounded" href="#page-top">
                     <i class="fas fa-angle-up"></i>
                 </a>
-
-                <!-- Logout Modal-->
-                <?php
-                include 'include/logout_modal.php '
-                ?>
 
                 <?php
                 include 'include/scripts.php'

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2020 at 07:13 PM
+-- Generation Time: Dec 07, 2020 at 04:34 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -64,9 +64,10 @@ CREATE TABLE `club` (
 --
 
 INSERT INTO `club` (`club_id`, `club_name`, `club_logo`, `club_info`, `club_link`) VALUES
-(1, 'Something', 0x31363037303935333937, 'Something', 'Something'),
-(2, 'Science Club', '', 'Related to environment', ''),
-(3, 'Samosa Club', 0x31363037313730343438, 'We Love Samosa', 'Samosa.com');
+(5, 'LSC', 0x313630373333363338344c53432e6a7067, 'for writing ', 'bk.nvb.nk'),
+(6, 'CODE', 0x31363037333339373935434f44452e706e67, 'Club Of DEvelopers', 'code-biet.co'),
+(7, 'Sports Subcouncil', 0x313630373334303132375353432e6a7067, 'Sports', 'vnc.snv'),
+(8, 'The drone Learners', 0x3136303733343032313054444c2e6a7067, 'drone', 'tdl.com');
 
 -- --------------------------------------------------------
 
@@ -80,19 +81,17 @@ CREATE TABLE `event` (
   `council_name` varchar(255) NOT NULL,
   `event_date` varchar(255) NOT NULL,
   `event_link` varchar(255) NOT NULL,
-  `event_info` varchar(255) NOT NULL
+  `event_info` varchar(255) NOT NULL,
+  `event_img` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`event_id`, `event_name`, `council_name`, `event_date`, `event_link`, `event_info`) VALUES
-(1, 'something', 'something', 'something', 'something', 'something'),
-(2, 'something', 'something', 'something', 'something', 'something'),
-(3, 'something', 'something', 'somethingsomething', 'something', 'something'),
-(4, 'Some other thing', 'Some other thing', 'Some other thing', 'Some other thing', 'Some other thing'),
-(5, 'Samosa Party', 'Samosa Council Of Students', '22/2/2000', 'Samosa.com', 'We love Samosa');
+INSERT INTO `event` (`event_id`, `event_name`, `council_name`, `event_date`, `event_link`, `event_info`, `event_img`) VALUES
+(8, 'Abhinandan', 'CSC', '5/9/2020', 'abhinandan.com', 'welcome fest', 0x31363037333436353639696d6731302e6a7067),
+(9, 'Sopaan', 'LSC', '25/1/2021', 'sopaan.in', 'A literary fest', 0x31363037333438313437696d67372e6a706567);
 
 -- --------------------------------------------------------
 
@@ -136,7 +135,8 @@ CREATE TABLE `notice` (
 INSERT INTO `notice` (`notice_id`, `title`, `date`, `npdf`) VALUES
 (2, 'Exams', '04/03/2021', ''),
 (8, 'something', '22/11/2222', '1607094665'),
-(9, 'Samosa', '22/2/2000', '1607170404');
+(9, 'Samosa', '22/2/2000', '1607170404'),
+(10, 'Announcement of vacations', '29/3/2021', '1607336469Fresher Non IT Jobs dec 4.pdf');
 
 -- --------------------------------------------------------
 
@@ -148,19 +148,23 @@ CREATE TABLE `q_and_a` (
   `id` int(5) NOT NULL,
   `question` varchar(2000) NOT NULL,
   `ques_approved` tinyint(1) DEFAULT NULL,
-  `ques_answered` tinyint(1) DEFAULT NULL,
+  `ques_answered` tinyint(1) NOT NULL,
   `answer` varchar(10000) NOT NULL,
-  `ans_approved` tinyint(1) DEFAULT NULL
+  `ans_approved` tinyint(1) DEFAULT NULL,
+  `ans_by` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `q_and_a`
 --
 
-INSERT INTO `q_and_a` (`id`, `question`, `ques_approved`, `ques_answered`, `answer`, `ans_approved`) VALUES
-(1, 'Who handles data in BIET?', 1, NULL, 'Not a particular person .It changes every year.', NULL),
-(10, 'Where is director\'s chamber?', NULL, NULL, 'Near Mech dept.', NULL),
-(11, 'Where is director\'s chamber?', NULL, NULL, 'Near Mech dept.', NULL);
+INSERT INTO `q_and_a` (`id`, `question`, `ques_approved`, `ques_answered`, `answer`, `ans_approved`, `ans_by`) VALUES
+(1, 'Who handles data in BIET?', 1, 1, 'Not a particular person .It changes every year.', 1, ''),
+(10, 'Where is director\'s chamber?', NULL, 0, 'NULL', 0, ''),
+(11, 'Where is director\'s chamber?', NULL, 0, 'Near Mech dept.', 1, ''),
+(12, 'fnwoebfibf jwebfibwefbw kebnfbwfn', NULL, 0, '', NULL, ''),
+(13, 'jcvksagdksg scnhbc, bchshc', NULL, 0, '', NULL, ''),
+(14, 'what is ur name?', NULL, 1, 'wb rb r rbf fmnb', 1, 'Muskan');
 
 -- --------------------------------------------------------
 
@@ -247,13 +251,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `club`
 --
 ALTER TABLE `club`
-  MODIFY `club_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `club_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -265,13 +269,13 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `q_and_a`
 --
 ALTER TABLE `q_and_a`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
