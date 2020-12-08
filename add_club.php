@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 
         $query = "INSERT INTO club(club_name,club_logo,club_info,club_link) VALUES ('$club_name','$images','$club_info','$club_link')";
         if (mysqli_query($con, $query)) {
-            echo "<script type='text/javascript'>alert('New Club has been successfully added.'); window.location.href = 'admin_index.php';</script>";
+            echo "<script type='text/javascript'>alert('New Club has been successfully added.'); window.location.href = 'view_clubs.php';</script>";
         } else {
             echo "error";
         }
