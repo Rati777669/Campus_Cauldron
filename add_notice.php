@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
         $query = "INSERT INTO notice(title,date,npdf) VALUES ('$title','$date','$images')";
         if (mysqli_query($con, $query)) {
-            echo "<script type='text/javascript'>alert('New Notice has been successfully added.'); window.location.href = 'admin_index.php';</script>";
+            echo "<script type='text/javascript'>alert('New Notice has been successfully added.'); window.location.href = 'view_notice.php';</script>";
         } else {
             echo "error";
             print mysqli_error();
