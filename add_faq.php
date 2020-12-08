@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 
         $query = "INSERT INTO faq(question, answer) VALUES ('$question', '$answer')";
         if (mysqli_query($con, $query)) {
-            echo "<script type='text/javascript'>alert('New FAQ has been successfully added.'); window.location.href = 'admin_index.php';</script>";
+            echo "<script type='text/javascript'>alert('New FAQ has been successfully added.'); window.location.href = 'view_faq.php';</script>";
         } else {
             echo "error";
         }
