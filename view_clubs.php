@@ -106,7 +106,7 @@ while ($row = mysqli_fetch_assoc($rs_result)) {
 <tbody>
                  <tr>
                      <td> <?php echo $row["club_name"]; ?> </td>
-                     <td><a href="club_logo/<?php echo $row["club_logo"];?>" target="_blank"></td>
+                     <td><a href="club_logo/<?php echo $row["club_logo"];?>" target="_blank"></td> <!-- redirecting to logo of club -->
                      <td> <?php echo $row["club_info"]; ?> </td>
                      <td> <?php echo $row["club_link"]; ?> </td>
 
