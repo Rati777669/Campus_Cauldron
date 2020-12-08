@@ -55,7 +55,15 @@ if (isset($_POST['submit'])) {
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+<style>
+        #my-submit{
+            background-color:#6b6cb2;
+            color:white;
+        }
+        #my-submit:hover{
+            background-color:#31326f;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -105,7 +113,7 @@ if (isset($_POST['submit'])) {
                                                 <input type="text" class="form-control form-control-user" id="" placeholder="Answer" name="answer" required>
                                             </div>
 
-                                            <button href="add_notice.php" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
+                                            <button href="add_notice.php" id="my-submit" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
                                                 Submit</button>
                                             <hr>
 
