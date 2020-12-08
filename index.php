@@ -181,7 +181,7 @@
               <?php
               while ($row = mysqli_fetch_assoc($rs_result)) {
               ?>
-                <p><a class="notice-link" href="#">
+                <p><a class="notice-link" href="npdf/<?php echo $row["npdf"];?>">
                     <strong style="font-family: 'Montserrat', sans-serif; font-size:20px;"><?php echo $row["title"]; ?></strong>
                     <br>
                     <em>Date: <?php echo $row["date"]; ?></em>
