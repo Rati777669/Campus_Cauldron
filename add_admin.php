@@ -53,7 +53,15 @@ if (isset($_POST['username'])) {
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+<style>
+        #my-submit{
+            background-color:#6b6cb2;
+            color:white;
+        }
+        #my-submit:hover{
+            background-color:#31326f;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -109,7 +117,7 @@ if (isset($_POST['username'])) {
                                                     <input type="password" class="form-control form-control-user" id="password" placeholder="Confirm Password" name="confirm_password" required>
                                                 </div>
                                             </div>
-                                            <button href="add_admin.php" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
+                                            <button href="add_admin.php" id="my-submit" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
                                                 Register</button>
                                             <hr>
 
