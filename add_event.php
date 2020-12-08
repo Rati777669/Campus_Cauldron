@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         if (mysqli_query($con, $query)) {
             echo "<script type='text/javascript'>
     alert('New event has been successfully added.');
-    window.location.href = 'admin_index.php';
+    window.location.href = 'view_events.php';
 </script>";
         } else {
             echo "error";
