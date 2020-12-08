@@ -21,7 +21,7 @@ if (isset($_POST['username'])) {
                 } else {
                     $ins = mysqli_query($con, "INSERT INTO admins (adminname,email,password) VALUES('$username','$email','$password')");
                     if ($ins > 0) {
-                        echo "<script type='text/javascript'>alert('You are successfully registered.'); window.location.href = 'add_admin.php';</script>";
+                        echo "<script type='text/javascript'>alert('You are successfully registered.'); window.location.href = 'view_admin.php';</script>";
                     } else {
                         echo "An error in database query";
                     }
