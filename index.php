@@ -102,52 +102,7 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark my-bg">
-    <a class="navbar-brand" href="index.php">Campus Cauldron</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <?php
-      include 'include/navbar.php';
-      ?>
-      <?php
-      if (!isset($_SESSION['email'])) {
-
-      ?>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="admin_login.php"><i class="fas fa-lock icon"></i>Admin Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sign-in.php">Sign In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sign-up.php">Sign Up</a>
-          </li>
-        </ul>
-      <?php } else {
-        include 'conn.php';
-        $sql1 = "select * from users WHERE email='" . $_SESSION['email'] . "'";
-        $rs_result1 = mysqli_query($con, $sql1);
-        $roww = mysqli_fetch_assoc($rs_result1);
-      ?><ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa icon fa-user-circle"></i><?php echo $roww['username']; ?>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="userprofile.php?id=<?php echo $roww["userid"]; ?>">View Profile</a>
-              <a class="dropdown-item" href="logout.php">Logout</a>
-
-            </div>
-        </ul>
-      <?php
-      }
-      ?>
-    </div>
-  </nav>
+  <?php include 'include/navbar.php' ?>
 
   <!-- INTRODUCTION -->
   <section id="introduction" class="introduction">
@@ -366,7 +321,7 @@
       ?>
       <div class="accordion " id="accordionExample">
 
-        <?php 
+        <?php
         $n=1;
         while ($row = mysqli_fetch_assoc($rs_result)) {
         ?>
@@ -388,7 +343,7 @@
         $n=$n+1;
         };
         ?>
-        
+
       </div>
     </div>
   </section>
@@ -404,91 +359,7 @@
   <hr id="after-map" class="section-diff" style="width:70%">
 
   <!-- Footer -->
-  <section id="footer">
-    <footer class="page-footer font-small mdb-color pt-4">
-
-      <!-- Footer Links -->
-      <div class="container text-center text-md-left">
-
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3">
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Campus Cauldron</h6>
-            <p>We hope you enjoyed your visit to our homepage!</p>
-          </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Links</h6>
-            <p>
-              <a class="footer-link" href="index.php#after-intro">Notice</a>
-            </p>
-            <p>
-              <a class="footer-link" href="index.php#after-questions">Gallery</a>
-            </p>
-            <p>
-              <a class="footer-link" href="index.php#after-gallery">Clubs and Cells</a>
-            </p>
-            <p>
-              <a class="footer-link" href="index.php#after-clubs">Events and Fests</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Contact us</h6>
-            <p>
-              <a class="footer-link" href="#!"><i class="fab fa-facebook-square mr-3"></i>Facebook</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!"><i class="fab fa-linkedin mr-3"></i>LinkedIn</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!"><i class="fab fa-twitter-square mr-3"></i>Twitter</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!"><i class="fas fa-envelope mr-3"></i>E-mail</a>
-            </p>
-          </div>
-
-          <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Legal</h6>
-            <p>
-              <a class="footer-link" href="#!">Privacy Policy</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!">Cookie Policy</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!">Terms Of Us</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Footer links -->
-
-        <hr>
-        <!-- Grid row -->
-
-      </div>
-      <!-- Footer Links -->
-
-    </footer>
-    <!-- Footer -->
-  </section>
+  <?php include 'include/footer.php' ?>
 
   <!-- FOR EVENTS AND FESTS -->
   <script type="text/javascript">

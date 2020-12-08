@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 
@@ -58,17 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         background-attachment: fixed;
         background-size: cover;">
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark my-bg">
-    <a class="navbar-brand" href="index.php">Campus Cauldron</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <?php include 'include/navbar.php';
       ?>
-    </div>
-  </nav>
+
   <br><br>
   <center>
     <section class="sign-in" style="width: 30rem;">
@@ -88,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Password</label>
                     <input type="password" name="password" class="form-control" placeholder="Password">
                   </div>
-                  
+
                   <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block">Sign In</button>
                   <br>
                   <div style="text-align:left">Not registered yet! <a href="sign-up.php">Sign-Up</a></div>
@@ -105,94 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <!-- FOOTER EXPERIMENT -->
   <br><br>
   <!-- Footer -->
-  <section id="footer">
-    <footer class="page-footer font-small mdb-color pt-4">
-
-      <!-- Footer Links -->
-      <div class="container text-center text-md-left">
-
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3">
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Campus Cauldron</h6>
-            <p>We hope you enjoyed your visit to our homepage!</p>
-          </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Links</h6>
-            <p>
-              <a class="footer-link" href="index.php#after-intro">Notice</a>
-            </p>
-            <p>
-              <a class="footer-link" href="index.php#after-questions">Gallery</a>
-            </p>
-            <p>
-              <a class="footer-link" href="index.php#after-gallery">Clubs and Cells</a>
-            </p>
-            <p>
-              <a class="footer-link" href="index.php#after-clubs">Events and Fests</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Contact us</h6>
-            <p>
-              <a class="footer-link" href="#!"><i class="fab fa-facebook-square mr-3"></i>Facebook</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!"><i class="fab fa-linkedin mr-3"></i>LinkedIn</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!"><i class="fab fa-twitter-square mr-3"></i>Twitter</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!"><i class="fas fa-envelope mr-3"></i>E-mail</a>
-            </p>
-          </div>
-
-          <!-- Grid column -->
-          <hr class="w-100 clearfix d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Legal</h6>
-            <p>
-              <a class="footer-link" href="#!">Privacy Policy</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!">Cookie Policy</a>
-            </p>
-            <p>
-              <a class="footer-link" href="#!">Terms Of Us</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Footer links -->
-
-        <hr>
-
-
-        <!-- Grid row -->
-
-      </div>
-      <!-- Footer Links -->
-
-    </footer>
-    <!-- Footer -->
-  </section>
-  // validation for empty field
+  <?php include 'include/footer.php' ?>
   <script>
     function validation() {
       var em = document.loginf.email.value;
