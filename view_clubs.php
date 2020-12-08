@@ -106,14 +106,17 @@ while ($row = mysqli_fetch_assoc($rs_result)) {
 <tbody>
                  <tr>
                      <td> <?php echo $row["club_name"]; ?> </td>
-                     <td><a href="club_logo/<?php echo $row["club_logo"];?>" target="_blank"></td> <!-- redirecting to logo of club -->
+                     <td><a class="btn btn-outline-danger" href='club_logo/<?php echo $row["club_logo"];?>'>view</a>
+                   
                      <td> <?php echo $row["club_info"]; ?> </td>
-                     <td> <?php echo $row["club_link"]; ?> </td>
+                     
+                     <td> <a href='<?php echo $row["club_link"]; ?>' target="_blank"><?php echo $row["club_link"]; ?></td>
 
 
                     <td><a class="btn btn-outline-danger" href='clubdelete.php?key1=<?php echo $row["club_id"]; ?>'>Delete</a>
                       
                     </td>
+
 
                  </tr>
 
