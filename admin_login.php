@@ -1,4 +1,18 @@
-<?php
+<?php @session_start();
+include('conn.php');
+
+if ($dbconfig) {
+//  echo "Datbase Connected";
+}
+else {
+  header('Location: conn.php');
+}
+
+
+if(!empty($_SESSION['username']))
+{
+  header('Location: admin_index.php');
+}
 
 if (isset($_POST['login_submit'])) {
     $username = $_POST['username'];
@@ -91,8 +105,8 @@ if (isset($_POST['login_submit'])) {
                                         <button id="my-submit" type="submit" name="login_submit" value="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
-                                        
-                                    </form>                                   
+
+                                    </form>
 
                                 </div>
                             </div>
