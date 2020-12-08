@@ -158,7 +158,7 @@
           <h4 id="intro-text">Campus Cauldron gives you just that!</h4>
         </div>
         <div class="col-lg-6">
-          <img id="intro-img" src="images/intro.jpg" alt="">
+          <img id="intro-img" src="images/intro_img.jpg" alt="">
         </div>
       </div>
     </div>
