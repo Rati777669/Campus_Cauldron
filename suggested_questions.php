@@ -17,13 +17,20 @@
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/styles.css">
+
+  <style>
+        #my-submit{
+            background-color:#6b6cb2;
+            color:white;
+        }
+        #my-submit:hover{
+            background-color:#31326f;
+        }
+    </style>
 </head>
 
 
-<body style="background-image: url('images/img11.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;">
+<body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark my-bg">
     <a class="navbar-brand" href="#">Campus Cauldron</a>
@@ -54,7 +61,7 @@
         $rs_result = mysqli_query($con, $sql);
         ?>
 
-        <table class="table" style="color: white">
+        <table class="table">
           <thead>
             <tr>
               <th width="20%">
@@ -78,7 +85,7 @@
                   if (!isset($_SESSION['email'])) {
                   ?> <a class="btn btn-light" href="sign-in.php">Sign-in to Answer</a>
                   <?php } else {
-                  ?> <a class="btn btn-light" href="answer_it.php?key1=<?php echo $row["id"]; ?>">Answer it</a>
+                  ?> <button class="btn" id="my-submit" href="answer_it.php?key1=<?php echo $row["id"]; ?>">Answer it</button>
                   <?php
                   }
                   ?> </td>
