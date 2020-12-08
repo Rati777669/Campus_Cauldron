@@ -149,7 +149,6 @@
     </div>
   </nav>
 
-
   <!-- INTRODUCTION -->
   <section id="introduction" class="introduction">
     <div class="intro-container">
@@ -164,12 +163,11 @@
       </div>
     </div>
   </section>
-
   <hr id="after-intro" class="section-diff" style="width:70%">
 
   <!-- NOTICES AND LINKS -->
   <section id="Notices-and-Links">
-    <div class="">
+    <div>
       <div class="row">
         <div class="col-lg-3">
           <div class="notice-panel">
@@ -177,7 +175,6 @@
             <marquee height="510" direction="up" scrollamount="3">
               <?php
               include 'conn.php';
-
               $sql = "select * from notice ORDER BY notice_id DESC";
               $rs_result = mysqli_query($con, $sql);
               ?>
@@ -188,7 +185,6 @@
                     <strong style="font-family: 'Montserrat', sans-serif; font-size:20px;"><?php echo $row["title"]; ?></strong>
                     <br>
                     <em>Date: <?php echo $row["date"]; ?></em>
-
                     <hr>
                   </a></p>
               <?php
@@ -197,20 +193,25 @@
             </marquee>
           </div>
         </div>
-
         <div class="col-lg-6">
           <div id="test">
-            <h4 id="list-item-1">Item 1</h4>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-            <h4 id="list-item-2">Item 2</h4>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-            <h4 id="list-item-3">Item 3</h4>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-            <h4 id="list-item-4">Item 4</h4>
-            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+            <?php
+            include 'conn.php';
+            $sql = "select * from q_and_a ORDER BY id DESC";
+            $rs_result = mysqli_query($con, $sql);
+            ?>
+            <?php
+            while ($row = mysqli_fetch_assoc($rs_result)) {
+            ?>
+              <h6 id="list-item-1"><?php echo $row["question"]; ?></h6>
+              <p><?php echo $row["answer"] ?>
+                <br> Posted by <b><?php echo $row["ans_by"] ?></b></p>
+              <hr>
+            <?php
+            };
+            ?>
           </div>
         </div>
-
         <div class="col-lg-3">
           <a class="my-links" href="#after-notice">
             <h3 class="links-head"><i class="icon far fa-image"></i>Gallery</h3>
@@ -229,13 +230,10 @@
           </a>
 
         </div>
-
       </div>
     </div>
   </section>
-
   <hr id="after-notice" class="section-diff" style="width:70%">
-
 
   <!-- GALLERY -->
   <section id="gallery">
@@ -275,7 +273,6 @@
       </div>
     </div>
   </section>
-
   <hr id="after-gallery" class="section-diff" style="width:70%">
 
   <!-- CLUBS AND COUNCILS -->
@@ -283,15 +280,16 @@
     <h1 class="clubs-head">Clubs and Councils</h1>
     <div class="container">
       <div class="row">
-        <div class="col-lg-4">
-          <?php
-          include 'conn.php';
-          $sql = "select * from club ORDER BY club_id DESC";
-          $rs_result = mysqli_query($con, $sql);
-          ?>
-          <?php
-          while ($row = mysqli_fetch_assoc($rs_result)) {
-          ?>
+        <?php
+        include 'conn.php';
+        $sql = "select * from club ORDER BY club_id DESC LIMIT 6";
+        $rs_result = mysqli_query($con, $sql);
+        ?>
+        <?php
+        while ($row = mysqli_fetch_assoc($rs_result)) {
+        ?>
+          <div class="col-lg-4">
+
             <a class="div-link" href="#">
               <div class="my-card">
                 <img href="#" src="club_logo/<?php print $row["club_logo"]; ?>" alt="Avatar" style="width:100%">
@@ -301,14 +299,14 @@
                 </div>
               </div>
             </a>
-          <?php
-          };
-          ?>
-        </div>
+
+          </div>
+        <?php
+        };
+        ?>
       </div>
     </div>
   </section>
-
   <hr id="after-clubs" class="section-diff" style="width:70%">
 
   <!-- EVENTS AND FESTS -->
@@ -333,7 +331,7 @@
           while ($row = mysqli_fetch_assoc($rs_result)) {
           ?>
             <div class="carousel-item col-md-4">
-              <img class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"]?>" alt="slides">
+              <img class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"] ?>" alt="slides">
               <div class="carousel-caption d-none d-md-block">
                 <h5><?php echo $row["event_name"] ?></h5>
                 <p><?php echo $row["council_name"] ?></p>
@@ -354,12 +352,9 @@
       </div>
     </div>
   </section>
-
   <hr id="after-fests" class="section-diff" style="width:70%">
 
   <!-- QUESTIONS -->
-
-
 
   <section style="text-align:center;">
     <h1 class="events-head">FAQs</h1>
@@ -371,74 +366,32 @@
       ?>
       <div class="accordion " id="accordionExample">
 
-        <?php
+        <?php 
+        $n=1;
         while ($row = mysqli_fetch_assoc($rs_result)) {
         ?>
           <div class="card">
-            <div style="background-color: #31326f;" class=" card-header" id="headingOne">
+            <div style="background-color: #31326f;" class=" card-header" id="heading1">
               <h1 class="question mb-0">
-                <button style="color:white;" class="btn  btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button style="color:white;" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $n;?>" aria-expanded="true" aria-controls="collapse<?php echo $n;?>">
                   <h2><?php echo $row["question"]; ?></h2>
                 </button>
               </h1>
             </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div style="color: black; background-color:white;" class="card-body ">
+            <div id="collapse<?php echo $n;?>" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+              <div style="color: black; background-color:white;" class="card-body collapse-item">
                 <h4 class="answer"><?php echo $row["answer"]; ?></h4>
               </div>
             </div>
           </div>
         <?php
+        $n=$n+1;
         };
         ?>
-        <div class="card">
-          <div style="background-color: #31326f;" class=" card-header" id="headingOne">
-            <h1 class="question mb-0">
-              <button style="color:white;" class="btn  btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h2>What is a good place to stay in Jhansi?</h2>
-              </button>
-            </h1>
-          </div>
-
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div style="color: black; background-color:white;" class="card-body ">
-              <h4 class="answer">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div style="background-color: #31326f;" class="card-header" id="headingTwo">
-            <h1 class="question mb-0">
-              <button style="color:white;" class="btn  btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <h2>What is a good place to stay in Jhansi?</h2>
-              </button>
-            </h1>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div style="color: black; background-color:white;" class="card-body">
-              <h4 class="answer">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div style="background-color: #31326f;" class="card-header" id="headingThree">
-            <h1 class="question mb-0">
-              <button style="color:white;" class="btn  btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <h2>What is a good place to stay in Jhansi?</h2>
-              </button>
-            </h1>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div style="color: black; background-color:white;" class="card-body">
-              <h4 class="answer">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</h4>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
-
   <hr id="after-questions" class="section-diff" style="width:70%">
 
   <!-- COLLEGE MAP -->
@@ -448,7 +401,6 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.3755268252967!2d78.63823101550054!3d25.459133183775105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39777701fa29d96b%3A0x274c37abc80c1ad1!2sBundelkhand%20Institute%20Of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1606041154250!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
   </section>
-
   <hr id="after-map" class="section-diff" style="width:70%">
 
   <!-- Footer -->
@@ -538,7 +490,6 @@
     <!-- Footer -->
   </section>
 
-
   <!-- FOR EVENTS AND FESTS -->
   <script type="text/javascript">
     $('#carouselExample').on('slide.bs.carousel', function(e) {
@@ -564,7 +515,6 @@
       }
     });
   </script>
-
 
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

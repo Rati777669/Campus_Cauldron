@@ -65,33 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Links
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="index.php#after-intro">Notices</a>
-            <a class="dropdown-item" href="index.php#after-notice">FAQs</a>
-            <a class="dropdown-item" href="index.php#after-questions">Gallery</a>
-            <a class="dropdown-item" href="index.php#after-gallery">Clubs and Cells</a>
-            <a class="dropdown-item" href="index.php#after-clubs">Events and Fests</a>
-            <a class="dropdown-item" href="index.php#after-fests">College Map</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ask.php">Ask</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
-        </li>
-      </ul>
+      <?php include 'include/navbar.php';
+      ?>
     </div>
   </nav>
   <br><br>
@@ -113,12 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Password</label>
                     <input type="password" name="password" class="form-control" placeholder="Password">
                   </div>
-
-                  <div style="text-align:left">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="checkbox">Keep Me Signed In</label>
-                  </div>
+                  
                   <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block">Sign In</button>
+                  <br>
+                  <div style="text-align:left">Not registered yet! <a href="sign-up.php">Sign-Up</a></div>
                 </form>
               </div>
             </div>

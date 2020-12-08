@@ -53,12 +53,16 @@
         $sql = "select * from q_and_a WHERE ques_answered<>1 ORDER BY id DESC LIMIT $start_from, 20 ";
         $rs_result = mysqli_query($con, $sql);
         ?>
-        
+
         <table class="table" style="color: white">
           <thead>
             <tr>
-              <th width="20%"><h2>Questions for You!</h2></th>
-              <th colspan=2 width="18%"><h2>Want to Answer!</h2></th>
+              <th width="20%">
+                <h2>Questions for You!</h2>
+              </th>
+              <th colspan=2 width="18%">
+                <h2>Want to Answer!</h2>
+              </th>
             </tr>
           </thead>
 
@@ -69,8 +73,15 @@
             <tbody>
               <tr>
                 <td> <?php echo $row["question"]; ?> </td>
-                <td><a class="btn btn-light" href='answer_it.php?key1=<?php echo $row["id"]; ?>'>Answer it</a>
-                </td>
+                <td>
+                  <?php
+                  if (!isset($_SESSION['email'])) {
+                  ?> <a class="btn btn-light" href="sign-in.php">Sign-in to Answer</a>
+                  <?php } else {
+                  ?> <a class="btn btn-light" href="answer_it.php?key1=<?php echo $row["id"]; ?>">Answer it</a>
+                  <?php
+                  }
+                  ?> </td>
               </tr>
 
             </tbody>

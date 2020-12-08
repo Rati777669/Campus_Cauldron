@@ -117,7 +117,7 @@ if (isset($_POST['username'])) {
                     <input type="password" id="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
                   </div>
                   <div style="text-align:left">
-                    <input type="checkbox" id="terms" name="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
                     <label for="checkbox">I agree to terms and Conditions</label>
                   </div>
                   <button type="submit" name="submit" class="btn btn-primary btn-block">SUBMIT</button>
