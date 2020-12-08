@@ -88,6 +88,10 @@ $rs_result = mysqli_query ($con,$sql);
 <thead>
                  <tr>
 <th width="20%">Name</th>
+<th width="20%">Logo of club</th>
+<th width="20%">description</th>
+<th width="20%">Link-club</th>
+
 
 
 
@@ -102,6 +106,9 @@ while ($row = mysqli_fetch_assoc($rs_result)) {
 <tbody>
                  <tr>
                      <td> <?php echo $row["club_name"]; ?> </td>
+                     <td><a href="club_logo/<?php echo $row["club_logo"];?>" target="_blank"></td>
+                     <td> <?php echo $row["club_info"]; ?> </td>
+                     <td> <?php echo $row["club_link"]; ?> </td>
 
 
                     <td><a class="btn btn-outline-danger" href='clubdelete.php?key1=<?php echo $row["club_id"]; ?>'>Delete</a>
