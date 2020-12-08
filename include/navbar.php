@@ -4,7 +4,7 @@
   </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Links
+      Explore
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" href="index.php#after-intro">Notices</a>
@@ -19,8 +19,15 @@
   <li class="nav-item">
     <a class="nav-link" href="#">About</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ask.php">Ask</a>
+  <li class="nav-item">    
+  <?php
+      if (!isset($_SESSION['email'])) {
+      ?> <a class="nav-link" href="sign-in.php">Sign-in to Ask</a>          
+      <?php } else {        
+      ?> <a class="nav-link" href="ask.php">Ask Questions</a>      
+      <?php
+      }
+      ?>
   </li>
   <li class="nav-item">
         <a class="nav-link" href="suggested_questions.php">Questions asked</a>

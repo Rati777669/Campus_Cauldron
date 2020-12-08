@@ -43,10 +43,18 @@ if (isset($_POST['login_submit'])) {
 
     <!-- Custom styles for this template-->
     <link href="css\sb-admin-2.min.css" rel="stylesheet">
-
+    <style>
+        #my-submit{
+            background-color:#6b6cb2;
+            color:white;
+        }
+        #my-submit:hover{
+            background-color:#31326f;
+        }
+    </style>
 </head>
 
-<body class="bg-gradient-primary">
+<body style="background-color:#31326f">
     <nav class="navbar navbar-expand-lg navbar-dark my-bg">
         <a class="navbar-brand" href="index.php">Campus Cauldron</a>
     </nav>
@@ -80,13 +88,11 @@ if (isset($_POST['login_submit'])) {
                                             <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Password" required>
                                         </div>
 
-                                        <button type="submit" name="login_submit" value="submit" class="btn btn-primary btn-user btn-block">
+                                        <button id="my-submit" type="submit" name="login_submit" value="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
-                                        <hr>
-
-                                    </form>
-                                    <hr>
+                                        
+                                    </form>                                   
 
                                 </div>
                             </div>
