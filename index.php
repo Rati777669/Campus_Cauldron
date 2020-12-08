@@ -160,7 +160,7 @@
             ?>
               <h5 id="list-item-1"><?php echo $row["question"]; ?></h5>
               <p><?php echo $row["answer"] ?>
-                <br> Posted by <b><?php echo $row["ans_by"] ?></b></p>
+                <br> Answered by <b><?php echo $row["ans_by"] ?></b></p>
               <hr>
             <?php
             };
