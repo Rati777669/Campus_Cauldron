@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
         $query = "INSERT INTO notice(title,date,npdf) VALUES ('$title','$date','$images')";
         if (mysqli_query($con, $query)) {
-            echo "<script type='text/javascript'>alert('New Notice has been successfully added.'); window.location.href = 'admin_index.php';</script>";
+            echo "<script type='text/javascript'>alert('New Notice has been successfully added.'); window.location.href = 'view_notice.php';</script>";
         } else {
             echo "error";
             print mysqli_error();
@@ -55,7 +55,15 @@ if (isset($_POST['submit'])) {
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+<style>
+        #my-submit{
+            background-color:#6b6cb2;
+            color:white;
+        }
+        #my-submit:hover{
+            background-color:#31326f;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -111,7 +119,7 @@ if (isset($_POST['submit'])) {
                                                 </div>
 
                                             </div>
-                                            <button href="add_notice.php" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
+                                            <button href="add_notice.php" id="my-submit" class="btn btn-primary btn-user btn-block" name="submit" type="submit">
                                                 Submit</button>
                                             <hr>
 

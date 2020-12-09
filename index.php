@@ -136,7 +136,7 @@
               <?php
               while ($row = mysqli_fetch_assoc($rs_result)) {
               ?>
-                <p><a class="notice-link" href="npdf/<?php echo $row["npdf"];?>">
+                <p><a class="notice-link" href="npdf/<?php echo $row["npdf"];?>" target="_blank">
                     <strong style="font-family: 'Montserrat', sans-serif; font-size:20px;"><?php echo $row["title"]; ?></strong>
                     <br>
                     <em>Date: <?php echo $row["date"]; ?></em>
@@ -160,7 +160,7 @@
             ?>
               <h5 id="list-item-1"><?php echo $row["question"]; ?></h5>
               <p><?php echo $row["answer"] ?>
-                <br> Posted by <b><?php echo $row["ans_by"] ?></b></p>
+                <br> Answered by <b><?php echo $row["ans_by"] ?></b></p>
               <hr>
             <?php
             };

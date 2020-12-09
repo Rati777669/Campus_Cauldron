@@ -31,7 +31,7 @@ include('include/security.php');
 
         <!-- Sidebar -->
         <?php
-            include 'include/sidebar.php'
+        include 'include/sidebar.php'
         ?>
         <!-- End of Sidebar -->
 
@@ -44,7 +44,7 @@ include('include/security.php');
 
                 <!-- Topbar -->
                 <?php
-                    include 'include/topbar.php'
+                include 'include/topbar.php'
                 ?>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
@@ -66,6 +66,8 @@ include('include/security.php');
                         <thead>
                             <tr>
                                 <th width="20%">Notices</th>
+                                <th width="20%">Date</th>
+                                <th width="20%">Document</th>
                                 <th colspan=2 width="18%">Action</th>
                             </tr>
                         </thead>
@@ -77,14 +79,11 @@ include('include/security.php');
                             <tbody>
                                 <tr>
                                     <td> <?php echo $row["title"]; ?> </td>
-
-
+                                    <td> <?php echo $row["date"]; ?> </td>
+                                    <td><a href="npdf/<?php echo $row["npdf"]; ?>" target="_blank">See PDF </a></td>
                                     <td><a class="btn btn-outline-danger" href='noticedelete.php?key1=<?php echo $row["notice_id"]; ?>'>Delete</a>
-                                
                                     </td>
-
                                 </tr>
-
                             </tbody>
 
                         <?php
@@ -116,9 +115,8 @@ include('include/security.php');
 
     <!-- Logout Modal-->
     <?php
-        include 'include/scripts.php'
+    include 'include/scripts.php'
     ?>
 </body>
 
 </html>
-
