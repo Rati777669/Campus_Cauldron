@@ -1,4 +1,4 @@
-<section id="footer">
+<section  id="footer">
   <footer class="page-footer font-small mdb-color pt-4">
 
     <!-- Footer Links -->
@@ -72,9 +72,8 @@
         <!-- Grid column -->
 
       </div>
-      <!-- Footer links -->
 
-      <hr>
+
 
 
       <!-- Grid row -->

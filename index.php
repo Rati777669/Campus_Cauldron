@@ -319,7 +319,7 @@
       $sql = "select * from faq ORDER BY faq_id DESC";
       $rs_result = mysqli_query($con, $sql);
       ?>
-      <div class="accordion " id="accordionExample">
+      <div class="accordion "  id="accordionExample">
 
         <?php
         $n=1;
@@ -328,13 +328,13 @@
           <div class="card">
             <div style="background-color: #31326f;" class=" card-header" id="heading1">
               <h1 class="question mb-0">
-                <button style="color:white;" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $n;?>" aria-expanded="true" aria-controls="collapse<?php echo $n;?>">
+                <button style="color:white;" class="btn nav-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $n;?>" aria-expanded="true" aria-controls="collapse<?php echo $n;?>">
                   <h2><?php echo $row["question"]; ?></h2>
                 </button>
               </h1>
             </div>
             <div id="collapse<?php echo $n;?>" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
-              <div style="color: black; background-color:white;" class="card-body collapse-item">
+              <div style="color: black; background-color:white; text-align:left;" class="card-body collapse-item">
                 <h4 class="answer"><?php echo $row["answer"]; ?></h4>
               </div>
             </div>
