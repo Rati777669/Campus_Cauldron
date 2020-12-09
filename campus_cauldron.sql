@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2020 at 10:18 PM
+-- Generation Time: Dec 09, 2020 at 02:45 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -91,7 +91,8 @@ CREATE TABLE `event` (
 
 INSERT INTO `event` (`event_id`, `event_name`, `council_name`, `event_date`, `event_link`, `event_info`, `event_img`) VALUES
 (8, 'Abhinandan', 'CSC', '5/9/2020', 'bietjhs.ac.in', 'welcome fest', 0x31363037333436353639696d6731302e6a7067),
-(9, 'Sopaan', 'LSC', '25/1/2021', 'https://m.facebook.com/lscbiet/', 'A literary fest', 0x31363037333438313437696d67372e6a706567);
+(11, 'Utsav', 'CSC', '25/3/2021', 'bietjhs.ac.in', 'The most magnificent festival for Bencolites', 0x3136303735303730353275747361762e6a7067),
+(12, 'Prabhanjan', 'Sports Sub Council, BIET', '25/2/2020', 'http://prabhanjan.org/', '#Aspire to Conquer', 0x313630373530373338365072616268616e6a616e2e6a7067);
 
 -- --------------------------------------------------------
 
@@ -156,12 +157,11 @@ CREATE TABLE `q_and_a` (
 --
 
 INSERT INTO `q_and_a` (`id`, `question`, `ques_approved`, `ques_answered`, `answer`, `ans_approved`, `ans_by`) VALUES
-(1, 'Who handles data in BIET?', 1, 1, 'Not a particular person .It changes every year.', 1, ''),
-(10, 'Where is director\'s chamber?', NULL, 0, 'NULL', 0, ''),
-(11, 'Where is director\'s chamber?', NULL, 0, 'Near Mech dept.', 1, ''),
-(12, 'fnwoebfibf jwebfibwefbw kebnfbwfn', NULL, 0, '', NULL, ''),
-(13, 'jcvksagdksg scnhbc, bchshc', NULL, 1, 'eb,b fhvb efkewfb ', NULL, 'Muskan'),
-(14, 'what is ur name?', NULL, 1, 'wb rb r rbf fmnb', 1, 'Muskan');
+(15, 'What are some of the interesting places to visit in BIET, Jhansi?', 1, 1, 'Some of the interesting places to visit are Jhansi Fort, Garhmau lake, BU, Orchha Fort, Shree Ram Raja Temple, and many more.', 1, 'User'),
+(16, 'Which of the branches are self-financed in BIET, Jhansi?', 1, 1, 'Information Technology and Electrical Engineering are the self financed branches of BIET, Jhansi.', 1, 'User'),
+(17, 'How many councils are there for student activity in BIET, Jhansi?', 1, 0, '', NULL, ''),
+(18, 'What is the hostel curfew timings?', 1, 0, '', NULL, ''),
+(19, 'How many canteens are there in the campus?', NULL, 0, '', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -255,7 +255,7 @@ ALTER TABLE `club`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -273,7 +273,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `q_and_a`
 --
 ALTER TABLE `q_and_a`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
