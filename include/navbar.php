@@ -27,14 +27,13 @@
         <a class="nav-link" href="about.php">About</a>
       </li>
       <li class="nav-item">
-      <?php
+        <a class="nav-link" <?php
           if (!isset($_SESSION['email'])) {
-          ?> <a class="nav-link" href="sign-in.php">Sign-in to Ask</a>
-          <?php } else {
-          ?> <a class="nav-link" href="ask.php">Ask Questions</a>
+             ?> href="sign-in.php"<?php } else {
+          ?> href="ask.php"
           <?php
           }
-          ?>
+          ?>>Ask</a>
       </li>
       <li class="nav-item">
             <a class="nav-link" href="suggested_questions.php">Questions asked</a>
