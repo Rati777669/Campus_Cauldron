@@ -17,6 +17,7 @@
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <!-- FOR EVENTS AND FESTS -->
@@ -98,6 +99,33 @@
     }
 
   }
+
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-top: 20px
+  }
+
+  .active,
+  .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .panel {
+    padding: 5px 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 </style>
 
 <body>
@@ -136,7 +164,7 @@
               <?php
               while ($row = mysqli_fetch_assoc($rs_result)) {
               ?>
-                <p><a class="notice-link" href="npdf/<?php echo $row["npdf"];?>" target="_blank">
+                <p><a class="notice-link" href="npdf/<?php echo $row["npdf"]; ?>" target="_blank">
                     <strong style="font-family: 'Montserrat', sans-serif; font-size:20px;"><?php echo $row["title"]; ?></strong>
                     <br>
                     <em>Date: <?php echo $row["date"]; ?></em>
@@ -152,7 +180,7 @@
           <div id="test">
             <?php
             include 'conn.php';
-            $sql = "select * from q_and_a ORDER BY id DESC";
+            $sql = "select * from q_and_a WHERE ans_approved=1 ORDER BY id DESC";
             $rs_result = mysqli_query($con, $sql);
             ?>
             <?php
@@ -197,27 +225,25 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <img class="gallery-images" src="images/img1.jpg" alt="">
+          <img class="gallery-images" src="images/Images_CC/1.jpg" alt="">
           <br>
-          <img class="gallery-images" src="images/img2.jpg" alt="">
+          <img class="gallery-images" src="images/Images_CC/2.jpg" alt="">
           <br>
-          <img class="gallery-images" src="images/img3.jpeg" alt="">
+          <img class="gallery-images" src="images/Images_CC/3.jpg" alt="">
         </div>
         <div class="col-lg-4">
-          <img class="gallery-images" src="images/img4.jpeg" alt="">
+          <img class="gallery-images" src="images/Images_CC/4.jpg" alt="">
           <br>
-          <img class="gallery-images" src="images/img5.jpg" alt="">
+          <img class="gallery-images" src="images/Images_CC/6.jpeg" alt="">
           <br>
-          <img class="gallery-images" src="images/img10.jpg" alt="">
-          <br>
-          <img class="gallery-images" src="images/img6.jpeg" alt="">
+          <img class="gallery-images" src="images/Images_CC/10.jpeg" alt="">
         </div>
         <div class="col-lg-4">
-          <img class="gallery-images" src="images/img7.jpeg" alt="">
+          <img class="gallery-images" src="images/Images_CC/8.jpeg" alt="">
           <br>
-          <img class="gallery-images" src="images/img8.jpeg" alt="">
+          <img class="gallery-images" src="images/Images_CC/9.jpeg" alt="">
           <br>
-          <img class="gallery-images" src="images/img11.jpg" alt="">
+          <img class="gallery-images" src="images/Images_CC/5.jpg" alt="">
           <br>
         </div>
       </div>
@@ -247,7 +273,7 @@
 
             <a class="div-link" href="#">
               <div class="my-card">
-                <img href="#" src="club_logo/<?php print $row["club_logo"]; ?>" alt="Avatar" style="width:100%">
+                <img href="#" height="350px" width="150px" src="club_logo/<?php print $row["club_logo"]; ?>" alt="Avatar" style="width:100%">
                 <div class="container">
                   <h4><b><?php print $row["club_name"]; ?></b></h4>
                   <p><?php echo $row["club_info"]; ?></p>
@@ -276,36 +302,44 @@
           $rs_result = mysqli_query($con, $sql);
           ?>
           <div class="carousel-item col-md-4 active">
-            <img class="my-img img-fluid mx-auto d-bloc" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Magnum Opus</h5>
-              <p>A Magnificent Event For Magnificent Personas!</p>
+            <div class="my-card">
+              <img class="my-img img-fluid mx-auto d-bloc" height="400" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide">
+              <div class="container" style="color:black">
+                <h5>Magnum Opus</h5>
+                <p>A Magnificent Event For Magnificent Personas!</p>
+              </div>
             </div>
           </div>
           <?php
           while ($row = mysqli_fetch_assoc($rs_result)) {
           ?>
             <div class="carousel-item col-md-4">
-              <img class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"] ?>" alt="slides">
-              <div class="carousel-caption d-none d-md-block">
-                <h5><?php echo $row["event_name"] ?></h5>
-                <p><?php echo $row["council_name"] ?></p>
+              <div class="card">
+                <img height="500px" width="300px" class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"] ?>" alt="slides">
+                <div class="caed-body" style="color:black">
+                  <div class="dropdown">
+                    <h5 class="card-title"><?php echo $row["event_name"] ?></h5>                    
+                      <p><?php echo $row["council_name"] ?></p>
+                      <p><?php echo $row["event_info"] ?></p>
+                      <p><?php echo $row["event_link"] ?></p>
+                      <p><?php echo $row["event_date"] ?></p>                    
+                  </div>
+                </div>
               </div>
-            </div>
-          <?php
+            <?php
           };
-          ?>
+            ?>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+              <i class="fa fa-chevron-left fa-lg text-muted"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+              <i class="fa fa-chevron-right fa-lg text-muted"></i>
+              <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-          <i class="fa fa-chevron-left fa-lg text-muted"></i>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-          <i class="fa fa-chevron-right fa-lg text-muted"></i>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
-    </div>
   </section>
   <hr id="after-fests" class="section-diff" style="width:70%">
 
@@ -319,31 +353,30 @@
       $sql = "select * from faq ORDER BY faq_id DESC";
       $rs_result = mysqli_query($con, $sql);
       ?>
-      <div class="accordion "  id="accordionExample">
+      <div class="accordion " id="accordionExample">
 
         <?php
-        $n=1;
+        $n = 1;
         while ($row = mysqli_fetch_assoc($rs_result)) {
         ?>
           <div class="card">
             <div style="background-color: #31326f;" class=" card-header" id="heading1">
               <h1 class="question mb-0">
-                <button style="color:white;" class="btn nav-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $n;?>" aria-expanded="true" aria-controls="collapse<?php echo $n;?>">
+                <button style="color:white;" class="btn nav-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $n; ?>" aria-expanded="true" aria-controls="collapse<?php echo $n; ?>">
                   <h2><?php echo $row["question"]; ?></h2>
                 </button>
               </h1>
             </div>
-            <div id="collapse<?php echo $n;?>" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
-              <div style="color: black; background-color:white; text-align:left;" class="card-body collapse-item">
+            <div id="collapse<?php echo $n; ?>" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+              <div style="color: black; background-color:white;" class="card-body collapse-item">
                 <h4 class="answer"><?php echo $row["answer"]; ?></h4>
               </div>
             </div>
           </div>
         <?php
-        $n=$n+1;
+          $n = $n + 1;
         };
         ?>
-
       </div>
     </div>
   </section>
