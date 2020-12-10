@@ -239,7 +239,7 @@
           <img class="gallery-images" src="images/Images_CC/10.jpeg" alt="">
         </div>
         <div class="col-lg-4">
-          <img class="gallery-images" src="images/Images_CC/8.jpeg" alt="">
+          <img class="gallery-images" src="images/Images_CC/8.jpg" alt="">
           <br>
           <img class="gallery-images" src="images/Images_CC/9.jpeg" alt="">
           <br>
@@ -248,7 +248,7 @@
         </div>
       </div>
       <div id="gallery-btn">
-        <a id="gallery-link" href="#">
+        <a id="gallery-link" href="gallery.php">
           <h5 class="intro-link-head">View All</h5>
         </a>
       </div>

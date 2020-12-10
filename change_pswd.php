@@ -102,8 +102,8 @@ if (count($_POST) > 0) {
     $row = mysqli_fetch_array($result);
     if (($old == $row['password'])&&($_POST['conpswd']==$_POST['newpswd'])) {
         mysqli_query($con, "UPDATE users set password='". $_POST["newpswd"]."' WHERE email='" . $_SESSION["email"] . "'");
-        echo "Password Changed";
+        echo "<script type='text/javascript'>alert('Your password has been changed!'); window.location.href = 'userprofile.php';</script>";
     } else
-        echo"Current Password is not correct";
+    echo "<script type='text/javascript'>alert('Your password cannot be changed!'); window.location.href = 'userprofile.php';</script>";
 }}
 ?>
