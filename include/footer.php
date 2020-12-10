@@ -10,7 +10,7 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">Campus Cauldron</h6>
-          <p>We hope you enjoyed your visit to our homepage!</p>
+          <p>We hope you enjoyed your visit!</p>
         </div>
         <!-- Grid column -->
 
