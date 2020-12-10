@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>About Campus Cauldron</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Montserrat:wght@800&family=Raleway:ital,wght@1,300&family=Roboto+Slab:wght@600&family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -16,6 +17,9 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-image: url('images/about_bg.jpeg');
+  background-size: cover;
+  background-repeat: no repeat;
 }
 
 html {
@@ -41,11 +45,9 @@ html {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #f1f1f1;
-  color: white;
-  background-image: url('images/img.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+
+
+
 }
 
 .container {
@@ -98,9 +100,11 @@ html {
   <?php include 'include/navbar.php' ?>
 
 <div class="about-section">
-  <h1 id="intro-head">About Us Page</h1>
-  <p id="intro-text">Some text about who we are and what we do.</p>
-  <p id="intro-text">Resize the browser window to see that this page is responsive by the way.</p>
+  <h1 id="intro-head">About Us</h1>
+  <p id="intro-text">Our mission is to share precise amount of information that would be benificial to many students throughout their Campus life!!
+  <br> We want to connect the students who have knowledge to those who need it.</p>
+  <p id="intro-text">Campus Cauldron's motto is to bring together bencolites at a same platform so as to ask, answer and get information.
+  <br> Their regular visit on our website will be most valued.</p>
 </div>
 
 <h2 style="text-align:center; margin-top:5rem;" class="map-head" >Our Team</h2>
@@ -109,8 +113,17 @@ html {
     <div class="card">
   <img src="images/image.jpg" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4 class='name'><b>Ashutosh Dwivedi</b></h4>
-    <p class='desc'>Architect & Engineer</p>
+    <h4 class='name'><b>Kshitij Sharma</b></h4>
+    <p class='desc'>Student at B.I.E.T</p>
+  </div>
+</div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card">
+  <img src="images/image.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4 class='name'><b>Mahima Rai</b></h4>
+    <p class='desc'>Student at B.I.E.T</p>
   </div>
 </div>
   </div>
@@ -119,7 +132,7 @@ html {
   <img src="images/image.jpg" alt="Avatar" style="width:100%">
   <div class="container">
     <h4 class='name'><b>Ashutosh Dwivedi</b></h4>
-    <p class='desc'>Architect & Engineer</p>
+    <p class='desc'>Student at B.I.E.T</p>
   </div>
 </div>
   </div>
@@ -127,17 +140,8 @@ html {
     <div class="card">
   <img src="images/image.jpg" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4 class='name'><b>Ashutosh Dwivedi</b></h4>
-    <p class='desc'>Architect & Engineer</p>
-  </div>
-</div>
-  </div>
-  <div class="col-lg-3">
-    <div class="card">
-  <img src="images/image.jpg" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4 class='name'><b>Ashutosh Dwivedi</b></h4>
-    <p class='desc'>Architect & Engineer</p>
+    <h4 class='name'><b>Rati Gupta</b></h4>
+    <p class='desc'>Student at B.I.E.T</p>
   </div>
 </div>
   </div>
