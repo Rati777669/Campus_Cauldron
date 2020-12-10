@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2020 at 02:45 PM
+-- Generation Time: Dec 10, 2020 at 04:27 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -90,9 +90,10 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`event_id`, `event_name`, `council_name`, `event_date`, `event_link`, `event_info`, `event_img`) VALUES
-(8, 'Abhinandan', 'CSC', '5/9/2020', 'bietjhs.ac.in', 'welcome fest', 0x31363037333436353639696d6731302e6a7067),
-(11, 'Utsav', 'CSC', '25/3/2021', 'bietjhs.ac.in', 'The most magnificent festival for Bencolites', 0x3136303735303730353275747361762e6a7067),
-(12, 'Prabhanjan', 'Sports Sub Council, BIET', '25/2/2020', 'http://prabhanjan.org/', '#Aspire to Conquer', 0x313630373530373338365072616268616e6a616e2e6a7067);
+(13, 'Prabhanjan', 'Sports Sub Councl', '25/2/2020', 'prabhanjan.org', '#Aspire to Conquer', 0x3136303735363732313353706f7274732e6a7067),
+(14, 'Utsav', 'Cultural Sub Council', '25/3/2021', 'bietjhs.ac.in', 'The largest fest for Bencolites', 0x3136303735363734363375747361762e6a7067),
+(15, 'Abhinandan', 'Cultural Sub Council', '5/9/2020', 'bietjhs.ac.in', 'The welcome party for all freshers', 0x31363037353637353937616268696e616e64616e2e6a7067),
+(16, 'Sopan', 'Literary Sub Council', '28/01.2020', 'bietjhs.ac.in', 'Compete to be Champion, Wizkid or Penman', 0x31363037353638313236736f7061616e2e6a7067);
 
 -- --------------------------------------------------------
 
@@ -159,9 +160,14 @@ CREATE TABLE `q_and_a` (
 INSERT INTO `q_and_a` (`id`, `question`, `ques_approved`, `ques_answered`, `answer`, `ans_approved`, `ans_by`) VALUES
 (15, 'What are some of the interesting places to visit in BIET, Jhansi?', 1, 1, 'Some of the interesting places to visit are Jhansi Fort, Garhmau lake, BU, Orchha Fort, Shree Ram Raja Temple, and many more.', 1, 'User'),
 (16, 'Which of the branches are self-financed in BIET, Jhansi?', 1, 1, 'Information Technology and Electrical Engineering are the self financed branches of BIET, Jhansi.', 1, 'User'),
-(17, 'How many councils are there for student activity in BIET, Jhansi?', 1, 0, '', NULL, ''),
+(17, 'How many councils are there for student activity in BIET, Jhansi?', 1, 1, 'There are 4 councils.', NULL, 'User'),
 (18, 'What is the hostel curfew timings?', 1, 0, '', NULL, ''),
-(19, 'How many canteens are there in the campus?', NULL, 0, '', NULL, '');
+(19, 'How many canteens are there in the campus?', NULL, 0, '', NULL, ''),
+(20, 'Hello there!', NULL, 0, '', NULL, ''),
+(21, 'hello there', NULL, 0, '', NULL, ''),
+(22, 'hello there', NULL, 0, '', NULL, ''),
+(23, 'bg grjb fbkebfe fbkebnf', NULL, 0, '', NULL, ''),
+(24, 'jg grgbkerg egrng ergfg gngn ', NULL, 0, '', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -186,7 +192,7 @@ INSERT INTO `users` (`userid`, `username`, `email`, `password`, `phone`) VALUES
 (2, 'Ashutosh', 'dwivedi.ash007@gmail.com', 'ashu', 2147483647),
 (3, 'Barfi', 'barfi@gmail.com', 'barfi', 2147483647),
 (4, 'Samose ke Chacha', 'samosekiid@gmail.com', 'samosa', 2147483647),
-(7, 'User', 'user@gmail.com', 'user', 1234567890);
+(7, 'User', 'user@gmail.com', 'mahima', 1234567890);
 
 --
 -- Indexes for dumped tables
@@ -255,7 +261,7 @@ ALTER TABLE `club`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -273,7 +279,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `q_and_a`
 --
 ALTER TABLE `q_and_a`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`

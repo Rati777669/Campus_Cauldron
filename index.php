@@ -290,6 +290,7 @@
   </section>
   <hr id="after-clubs" class="section-diff" style="width:70%">
 
+
   <!-- EVENTS AND FESTS -->
   <section id="events-and-fests">
     <h1 class="events-head">Events And Fests</h1>
@@ -302,44 +303,41 @@
           $rs_result = mysqli_query($con, $sql);
           ?>
           <div class="carousel-item col-md-4 active">
-            <div class="my-card">
-              <img class="my-img img-fluid mx-auto d-bloc" height="400" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="slide">
-              <div class="container" style="color:black">
-                <h5>Magnum Opus</h5>
-                <p>A Magnificent Event For Magnificent Personas!</p>
-              </div>
+            <img class="my-img img-fluid mx-auto d-bloc" src="images/techzion.jpg" alt="slide">
+            <div style="background-color: #31326f; color:white">
+              <a class="btn nav-link" target="_blank" href="https://bietjhs.ac.in"> <b>Techzion</b><br>
+              <p>FEE & EEF
+                <br>A Magnificent Event For Tech Enthusiasts
+                <br>22-25 jan 2020</p></a>
             </div>
           </div>
           <?php
           while ($row = mysqli_fetch_assoc($rs_result)) {
           ?>
             <div class="carousel-item col-md-4">
-              <div class="card">
-                <img height="500px" width="300px" class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"] ?>" alt="slides">
-                <div class="caed-body" style="color:black">
-                  <div class="dropdown">
-                    <h5 class="card-title"><?php echo $row["event_name"] ?></h5>                    
-                      <p><?php echo $row["council_name"] ?></p>
-                      <p><?php echo $row["event_info"] ?></p>
-                      <p><?php echo $row["event_link"] ?></p>
-                      <p><?php echo $row["event_date"] ?></p>                    
-                  </div>
-                </div>
+              <img class="my-img img-fluid mx-auto d-block" src="event_img/<?php print $row["event_img"] ?>" alt="slides">
+              <div style="background-color: #31326f; color:white">
+              <a class="btn nav-link" target="_blank" href="https://<?php echo $row["event_link"] ?>">
+                <b><?php echo $row["event_name"] ?></b><br>
+                <p><?php echo $row["council_name"] ?>
+                  <br><?php echo $row["event_info"] ?>
+                  <br><?php echo $row["event_date"] ?></p></a>
               </div>
-            <?php
-          };
-            ?>
             </div>
-            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-              <i class="fa fa-chevron-left fa-lg text-muted"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-              <i class="fa fa-chevron-right fa-lg text-muted"></i>
-              <span class="sr-only">Next</span>
-            </a>
+          <?php
+          };
+          ?>
         </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <i class="fa fa-chevron-left fa-lg text-muted"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+          <i class="fa fa-chevron-right fa-lg text-muted"></i>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
+    </div>
   </section>
   <hr id="after-fests" class="section-diff" style="width:70%">
 
