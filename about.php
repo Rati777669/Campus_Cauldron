@@ -22,6 +22,7 @@ body {
   background-repeat: no repeat;
 }
 
+
 html {
   box-sizing: border-box;
 }
@@ -100,18 +101,18 @@ html {
   <?php include 'include/navbar.php' ?>
 
 <div class="about-section">
-  <h1 id="intro-head">About Us</h1>
-  <p id="intro-text">Our mission is to share precise amount of information that would be benificial to many students throughout their Campus life!!
-  <br> We want to connect the students who have knowledge to those who need it.</p>
-  <p id="intro-text">Campus Cauldron's motto is to bring together bencolites at a same platform so as to ask, answer and get information.
-  <br> Their regular visit on our website will be most valued.</p>
+  <h1 id="intro-head" style="padding-top:50px; padding-bottom:130px;">About Us</h1>
+  <h5 id="intro-text">Our mission is to share precise amount of information that would be benificial to many students throughout their Campus life!!
+  <br> We want to connect the students who have knowledge to those who need it.</h5>
+  <h5 id="intro-text">Campus Cauldron's motto is to bring together bencolites at a same platform so as to ask, answer and get information.
+  <br> Their regular visit on our website will be most valued.</h5>
 </div>
 
 <h2 style="text-align:center; margin-top:5rem;" class="map-head" >Our Team</h2>
 <div class="row">
   <div class="col-lg-3">
     <div class="card">
-  <img src="images/image.jpg" alt="Avatar" style="width:100%">
+  <img src="images/kshitij.jpeg" alt="Avatar" style="width:100%">
   <div class="container">
     <h4 class='name'><b>Kshitij Sharma</b></h4>
     <p class='desc'>Student at B.I.E.T</p>
@@ -120,7 +121,7 @@ html {
   </div>
   <div class="col-lg-3">
     <div class="card">
-  <img src="images/image.jpg" alt="Avatar" style="width:100%">
+  <img src="images/mahi.jpeg" alt="Avatar" style="width:100%">
   <div class="container">
     <h4 class='name'><b>Mahima Rai</b></h4>
     <p class='desc'>Student at B.I.E.T</p>
@@ -129,7 +130,7 @@ html {
   </div>
   <div class="col-lg-3">
     <div class="card">
-  <img src="images/image.jpg" alt="Avatar" style="width:100%">
+  <img src="images/ashu.jpeg" alt="Avatar" style="width:100%">
   <div class="container">
     <h4 class='name'><b>Ashutosh Dwivedi</b></h4>
     <p class='desc'>Student at B.I.E.T</p>
@@ -138,7 +139,7 @@ html {
   </div>
   <div class="col-lg-3">
     <div class="card">
-  <img src="images/image.jpg" alt="Avatar" style="width:100%">
+  <img src="images/rati.jpeg" alt="Avatar" style="width:100%">
   <div class="container">
     <h4 class='name'><b>Rati Gupta</b></h4>
     <p class='desc'>Student at B.I.E.T</p>
