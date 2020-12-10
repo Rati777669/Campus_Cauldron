@@ -1,43 +1,3 @@
-<?php
-
-
-$mykey2 = $_REQUEST['key'];
-session_start();
-include 'conn.php';
-$result = mysqli_query($con, "SELECT * FROM users WHERE userid=$mykey2");
-if (mysqli_num_rows($result) > 0) {
-    @session_start();
-    $row = mysqli_fetch_array($result);
-    $_SESSION['uname']=$row['username'];
-    $_SESSION['pasw']=$row['password'];
-
-
-} else {
-    echo "<script type='text/javascript'>alert('Your profile cannot be opened.'); window.location.href = 'index.php';</script>";
-}
-
-if (isset($_POST['submit'])) {
-    $old_pswd = $_POST['old_pswd'];
-    $new_pswd = $_POST['new_pswd'];
-    $con_pswd = $_POST['con_pswd'];
-
-    if (empty($old_pswd) || empty($new_pswd) || empty($con_pswd)) {
-        echo " <div class='alert alert-danger'><strong>ERROR</strong> - Empty fields are not allowed !</div>";
-    } else {
-        if (($old_pswd == $_SESSION['pasw']) && ($new_pswd == $con_pswd)) {
-            $ins = mysqli_query($con, "UPDATE users SET password='$new_pswd' where userid='$mykey1'");
-            if ($ins == 1) {
-                echo "<script type='text/javascript'>alert('Your password has been reset'); window.location.href = 'userprofile.php';</script>";
-            } else {
-                echo "error in database";
-            }
-        } else {
-            echo "<script type='text/javascript'>alert('Enter correct password');</script>";
-        }
-    }
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,17 +38,20 @@ if (isset($_POST['submit'])) {
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4"><?php echo $row["username"] ?></h1>
+                                        <h1 class="h4 text-gray-900 mb-4"></h1>
                                     </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input name="old_pswd" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter Current Password">
+                                    <form class="user" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                                    <div class="form-group">
+                                            <input name="email" type="email" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter email">
                                         </div>
                                         <div class="form-group">
-                                            <input name="new_pswd" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter new Password">
+                                            <input name="oldpswd" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter Current Password">
                                         </div>
                                         <div class="form-group">
-                                            <input name="con_pswd" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Confirm new Password">
+                                            <input name="newpswd" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter new Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="conpswd" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Confirm new Password">
                                         </div>
 
                                         <button class="btn btn-primary btn-user btn-block" name="submit" value="submit" type="submit">
@@ -96,6 +59,7 @@ if (isset($_POST['submit'])) {
                                         </button>
                                         <hr>
                                     </form>
+                                 
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="index.php">Back to home</a>
@@ -125,3 +89,21 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
+<?php
+session_start();
+
+include 'conn.php';
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+$newe=$_POST['email'];
+$old=$_POST['oldpswd'];
+if (count($_POST) > 0) {
+    $result = mysqli_query($con, "SELECT * from users WHERE email='$newe'");
+    $row = mysqli_fetch_array($result);
+    if (($old == $row['password'])&&($_POST['conpswd']==$_POST['newpswd'])) {
+        mysqli_query($con, "UPDATE users set password='". $_POST["newpswd"]."' WHERE email='" . $_SESSION["email"] . "'");
+        echo "Password Changed";
+    } else
+        echo"Current Password is not correct";
+}}
+?>
