@@ -113,16 +113,16 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Links</h6>
             <p>
-              <a class="footer-link" href="#after-intro">Notice</a>
+              <a class="footer-link" href="index.php#after-intro">Notice</a>
             </p>
             <p>
-              <a class="footer-link" href="#after-questions">Gallery</a>
+              <a class="footer-link" href="index.php#after-questions">Gallery</a>
             </p>
             <p>
-              <a class="footer-link" href="#after-gallery">Clubs and Cells</a>
+              <a class="footer-link" href="index.php#after-gallery">Clubs and Cells</a>
             </p>
             <p>
-              <a class="footer-link" href="#after-clubs">Events and Fests</a>
+              <a class="footer-link" href="index.php#after-clubs">Events and Fests</a>
             </p>
           </div>
           <!-- Grid column -->
