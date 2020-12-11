@@ -215,6 +215,11 @@ html {
      background-color: #31326f;
      color: white;
    }
+.space
+{position: absolute;
+    bottom: 0;
+    width: 100%;}
+
    .footer-link{
      color: white
    }
