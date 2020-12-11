@@ -91,7 +91,7 @@
   <!-- FOOTER EXPERIMENT -->
   <br><br>
   <!-- Footer -->
-  <section id="footer">
+  <section id="footer" class="space">
     <footer class="page-footer font-small mdb-color pt-4">
 
       <!-- Footer Links -->
