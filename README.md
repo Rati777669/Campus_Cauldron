@@ -1,5 +1,5 @@
 # Campus_Cauldron
 
-Our project aims to share precise amount of information that would be benificial to many students throughout their Campus life!!
-We want to connect the students who have knowledge to those who need it.
-Campus Cauldron's motto is to bring together bencolites at a same platform so as to ask, answer and get information. Their regular visit on our website will be most valued.
+Our project aims to share the precise amount of information that would be beneficial to many Bencolites throughout their Campus life!!
+We want to bridge the gap between students who have knowledge and those who seek for it.
+Campus Cauldron's motto is to bring BIETians together to ask, answer and seek information brewing in the same cauldron. Their regular visit on our website will be most valued.
