@@ -11,15 +11,16 @@ Campus Cauldron's motto is to bring BIETians together to ask, answer and seek in
 `CONTENTS OF THIS PROJECT`
 ---------------------
 
- * Introduction
+ * 
  * A panel having questions asked by users
  * List of suggested questions to be answered by users
- * 
- *
- * 
+ * Recent Notices and Announcemnts
+ * Gallery of various pictures of campus life
+ * Different clubs and councils operating in the college
+ * A carousal of numerous events and fests alongwith details
  * FAQ
- * Maintainers
-
+ * An iframe of map showing nooks and corners of campus
+ 
 
 
 
