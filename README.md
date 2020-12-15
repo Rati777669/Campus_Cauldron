@@ -10,8 +10,17 @@ We want to bridge the gap between students who have knowledge and those who seek
 Campus Cauldron's motto is to bring BIETians together to ask, answer and seek information brewing in the same cauldron. Their regular visit on our website will be most valued.
  
  ![Homepage_introduction](/Snapshots/Introshot.png "Introduction")
+ 
+ * `Sign-Up/Sign-In`-
+------------
+ ![SIGN-IN_SIGN-UP](/Snapshots/Sign-up_shot.png "Sign-up to ask")
+The visitors need to Sign-Up to ask or answer their respective queries. 
 
- * A panel having questions asked by users
+ * `Ask Questions`-
+------------ 
+
+ ![Ask_page](/Snapshots/Askshot.png "Ask your questions")
+A panel having questions asked by users
  * List of suggested questions to be answered by users
  * Recent Notices and Announcemnts
  * Gallery of various pictures of campus life
