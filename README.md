@@ -1,4 +1,4 @@
-# Project Title: Campus_Cauldron
+# `Project Title`: Campus_Cauldron
 
 Our project aims to share the precise amount of information that would be beneficial to many Bencolites throughout their Campus life!!
 We want to bridge the gap between students who have knowledge and those who seek for it.
