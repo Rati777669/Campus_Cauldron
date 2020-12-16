@@ -72,6 +72,48 @@ An iframe of map showing nooks and corners for the detailed view of the campus.
 
 ![MAP panel](/Snapshots/Map_shot.png "A MAP for our visitors")
 
+# Technologies and Languages involved
+---------------------
+![WebDev Logo](http://www.azinovatechnologies.com/blog/wp-content/uploads/2016/03/web-development.jpg)
+***
+# Description
+***
+A full-stack web developer should have skills in both front-end design/development and back-end/server coding. We can expect a full-stack developer to design, code, implement and maintain a fully functional modern interactive website on his/her own.
+***
+# Front End
+***
+- [HTML](http://www.w3schools.com/html/default.asp) - A markup language for describing web documents.
+- [CSS](http://www.w3schools.com/css/default.asp) - A style sheet language used for describing the look and formatting of a document written in a markup language.
+- [Java Script](http://www.w3schools.com/js/default.asp) - A programming language of the Web.
+***
+### CSS Frameworks
+***
+- [Bootstrap](http://getbootstrap.com/) - HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+- [Semantic UI](http://semantic-ui.com/)
+***
+### JavaScript Frameworks
+***
+- [jQuery](http://jquery.com/) - jQuery is a fast, small, and feature-rich JavaScript library.
+    - [jQuery UI](http://jqueryui.com/)
+    - [jQuery Mobile](http://jquerymobile.com/) - A Touch-Optimized Web Framework.
+- [AngularJS v1](https://angularjs.org/) - HTML enhanced for web apps.
+- [AngularJS v2](https://angular.io/) - One framework. Mobile & desktop.
+- [React JS](https://facebook.github.io/react/) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
+
+
+***
+### Design Tools
+
+- [User Interface Design Tools](http://www.tripwiremagazine.com/2012/03/user-interface-design-tools.html)
+- [Graphic Design Tools](http://www.creativebloq.com/graphic-design/underrated-tools-graphic-designers-12121495)
+***
+# Back End
+***
+- [php](http://php.net/) - A popular general-purpose scripting language that is especially suited to web development.
+***
+# Data Base
+***
+- [MySQL](http://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", and "SQL", the abbreviation for Structured Query Language.
 
 
 
