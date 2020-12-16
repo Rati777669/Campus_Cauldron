@@ -78,7 +78,7 @@ An iframe of map showing nooks and corners for the detailed view of the campus.
 ***
 # Description
 ***
-A full-stack web developer should have skills in both front-end design/development and back-end/server coding. We can expect a full-stack developer to design, code, implement and maintain a fully functional modern interactive website on his/her own.
+Web Applications are dynamic web sites combined with server side programming which provide functionalities such as interacting with users, connecting to back-end databases, and generating results to browsers. As a full-stack web developer having skills in both front-end design/development and back-end/server coding. 
 ***
 # Front End
 - [HTML](http://www.w3schools.com/html/default.asp) - A markup language for describing web documents.
