@@ -109,6 +109,7 @@ A full-stack web developer should have skills in both front-end design/developme
 ***
 # Data Base
 - [MySQL](http://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", and "SQL", the abbreviation for Structured Query Language.
+***
 
 # `OUR TEAM`
 
