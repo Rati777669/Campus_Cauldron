@@ -110,7 +110,14 @@ A full-stack web developer should have skills in both front-end design/developme
 # Data Base
 - [MySQL](http://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", and "SQL", the abbreviation for Structured Query Language.
 
+# `OUR TEAM`
 
-
+| First Header  | Members | Branch  | Year |
+| ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Ashutosh Dwivedi  | Electrical Engineering  | Second Year  |
+| Content Cell  | Mahima Rai  | Electronics & Communication Engineering  | Second Year  |
+| Content Cell  | Kshitij Sharma  | Electronics & Communication Engineering  | Second Year  |
+| Content Cell  | Rati Gupta  | Information Technology  | Second Year  |
+***
 
 
