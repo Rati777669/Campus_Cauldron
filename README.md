@@ -74,7 +74,7 @@ An iframe of map showing nooks and corners for the detailed view of the campus.
 
 # Technologies and Languages involved
 ---------------------
-![WebDev Logo](https://images.app.goo.gl/sJFjeT65knWj7Bad8)
+![Languages used](/Snapshots/Technology_shot.jpeg "Logo of the languages involved")
 ***
 # Description
 ***
