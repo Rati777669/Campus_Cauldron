@@ -91,13 +91,7 @@ A full-stack web developer should have skills in both front-end design/developme
 ***
 ### JavaScript Frameworks
 - [jQuery](http://jquery.com/) - jQuery is a fast, small, and feature-rich JavaScript library.
-    - [jQuery UI](http://jqueryui.com/)
-    - [jQuery Mobile](http://jquerymobile.com/) - A Touch-Optimized Web Framework.
-- [AngularJS v1](https://angularjs.org/) - HTML enhanced for web apps.
-- [AngularJS v2](https://angular.io/) - One framework. Mobile & desktop.
-- [React JS](https://facebook.github.io/react/) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
-
-
+   
 ***
 ### Design Tools
 
@@ -111,14 +105,14 @@ A full-stack web developer should have skills in both front-end design/developme
 - [MySQL](http://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", and "SQL", the abbreviation for Structured Query Language.
 ***
 
-# `OUR TEAM`
+# OUR TEAM : `CHAOS`
 
-| First Header  | Members | Branch  | Year |
+| Team Chaos  | Members | Branch  | Year |
 | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Ashutosh Dwivedi  | Electrical Engineering  | Second Year  |
-| Content Cell  | Mahima Rai  | Electronics & Communication Engineering  | Second Year  |
-| Content Cell  | Kshitij Sharma  | Electronics & Communication Engineering  | Second Year  |
-| Content Cell  | Rati Gupta  | Information Technology  | Second Year  |
+| Front-end developer  | Ashutosh Dwivedi  | Electrical Engineering  | Second Year  |
+| Back-end developer  | Mahima Rai `(Leader)`  | Electronics & Communication Engineering  | Second Year  |
+| Front-end developer  | Kshitij Sharma  | Electronics & Communication Engineering  | Second Year  |
+| Back-end developer  | Rati Gupta  | Information Technology  | Second Year  |
 ***
 
 
