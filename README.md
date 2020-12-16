@@ -74,7 +74,7 @@ An iframe of map showing nooks and corners for the detailed view of the campus.
 
 # Technologies and Languages involved
 ---------------------
-![WebDev Logo](http://www.azinovatechnologies.com/blog/wp-content/uploads/2016/03/web-development.jpg)
+![WebDev Logo](https://images.app.goo.gl/sJFjeT65knWj7Bad8)
 ***
 # Description
 ***
@@ -87,7 +87,7 @@ A full-stack web developer should have skills in both front-end design/developme
 ***
 ### CSS Frameworks
 - [Bootstrap](http://getbootstrap.com/) - HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
-- [Semantic UI](http://semantic-ui.com/)
+- [Semantic UI](http://semantic-ui.com/) - Semantic UI is a modern front-end development framework, powered by LESS and jQuery. It has a sleek, subtle, and flat design look that provides a lightweight user experience.
 ***
 ### JavaScript Frameworks
 - [jQuery](http://jquery.com/) - jQuery is a fast, small, and feature-rich JavaScript library.
@@ -109,10 +109,10 @@ A full-stack web developer should have skills in both front-end design/developme
 
 | Team Chaos  | Members | Branch  | Year |
 | ------------- | ------------- | ------------- | ------------- |
-| Front-end developer  | Ashutosh Dwivedi  | Electrical Engineering  | Second Year  |
-| Back-end developer  | Mahima Rai `(Leader)`  | Electronics & Communication Engineering  | Second Year  |
-| Front-end developer  | Kshitij Sharma  | Electronics & Communication Engineering  | Second Year  |
-| Back-end developer  | Rati Gupta  | Information Technology  | Second Year  |
+| I  | Ashutosh Dwivedi  | Electrical Engineering  | Second Year  |
+| II  | Mahima Rai `(Leader)`  | Electronics & Communication Engineering  | Second Year  |
+| III  | Kshitij Sharma  | Electronics & Communication Engineering  | Second Year  |
+| IV  | Rati Gupta  | Information Technology  | Second Year  |
 ***
 
 
