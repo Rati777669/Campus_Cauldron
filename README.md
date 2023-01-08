@@ -112,7 +112,7 @@ Web Applications are dynamic web sites combined with server side programming whi
 | I  | Ashutosh Dwivedi  | Electrical Engineering  | Second Year  |
 | II  | Mahima Rai `(Leader)`  | Electronics & Communication Engineering  | Second Year  |
 | III  | Kshitij Sharma  | Electronics & Communication Engineering  | Second Year  |
-| IV  | Rati Gupta  | Information Technology  | Second Year  |
+| IV  | Rati Gupta  | Information Technology  | Second Year |
 ***
 
 
