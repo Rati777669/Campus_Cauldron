@@ -3,11 +3,10 @@
 include 'conn.php';
 if (isset($_POST['username'])) {
   $username = $_POST['username'];
-  $phone = $_POST['phone'];
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  if (!empty($username) || !empty($email) || !empty($phone) || !empty($password)) {
+  if (!empty($username) || !empty($email) || !empty($password)) {
     if (isset($_POST['password']) && $_POST['password'] !== $_POST['confirm_password']) {
       echo "<script type='text/javascript'>alert('The two passwords do not match'); window.location.href = 'sign-up.php';</script>";
     } else {
@@ -18,7 +17,7 @@ if (isset($_POST['username'])) {
           echo "<script type='text/javascript'>alert('Email already exists');</script>";
         }
       } else {
-        $ins = mysqli_query($con, "insert into users(username,email,phone,password) values('$username','$email','$phone','$password')");
+        $ins = mysqli_query($con, "insert into users(username,email,password) values('$username','$email','$password')");
         if ($ins > 0) {
           @session_start();
           $_SESSION['email'] = $email;
@@ -93,10 +92,7 @@ if (isset($_POST['username'])) {
                     <label>Your Name</label>
                     <input type="text" id="username" name="username" class="form-control" placeholder="Name" required>
                   </div>
-                  <div style="text-align:left" class="form-group">
-                    <label>Phone</label>
-                    <input type="digits" class="form-control" id="number" name="phone" placeholder="Mobile no.">
-                  </div>
+                  
                   <div style="text-align:left" class="form-group">
                     <label>Email</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>

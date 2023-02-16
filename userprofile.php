@@ -58,9 +58,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="form-group">
                       Email: <?php echo $row["email"] ?>
                     </div>
-                    <div class="form-group">
-                      Phone: <?php echo $row["phone"] ?>
-                    </div>
+                  
                     <hr>
                     <a href='change_pswd.php?key=<?php echo $row["userid"]; ?>' class="btn btn-primary btn-user btn-block">
                       Change Password </a>

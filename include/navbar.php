@@ -48,7 +48,7 @@
     ?>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="admin_login.php"><i class="fas fa-lock icon"></i>Admin Login</a>
+          <a class="nav-link" href="admin_login.php">Admin Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="sign-in.php">Sign In</a>

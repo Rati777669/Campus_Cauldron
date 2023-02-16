@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2020 at 11:33 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Feb 16, 2023 at 11:29 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -90,10 +90,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`event_id`, `event_name`, `council_name`, `event_date`, `event_link`, `event_info`, `event_img`) VALUES
-(13, 'Prabhanjan', 'Sports Sub Councl', '25/2/2020', 'prabhanjan.org', '#Aspire to Conquer', 0x3136303735363732313353706f7274732e6a7067),
-(14, 'Utsav', 'Cultural Sub Council', '25/3/2021', 'bietjhs.ac.in', 'The largest fest for Bencolites', 0x3136303735363734363375747361762e6a7067),
-(15, 'Abhinandan', 'Cultural Sub Council', '5/9/2020', 'bietjhs.ac.in', 'The welcome party for all freshers', 0x31363037353637353937616268696e616e64616e2e6a7067),
-(16, 'Sopan', 'Literary Sub Council', '28/01.2020', 'bietjhs.ac.in', 'Compete to be Champion, Wizkid or Penman', 0x31363037353638313236736f7061616e2e6a7067);
+(8, 'Abhinandan', 'CSC', '5/9/2020', 'bietjhs.ac.in', 'welcome fest', 0x31363037333436353639696d6731302e6a7067),
+(9, 'Sopaan', 'LSC', '25/1/2021', 'https://m.facebook.com/lscbiet/', 'A literary fest', 0x31363037333438313437696d67372e6a706567);
 
 -- --------------------------------------------------------
 
@@ -158,13 +156,14 @@ CREATE TABLE `q_and_a` (
 --
 
 INSERT INTO `q_and_a` (`id`, `question`, `ques_approved`, `ques_answered`, `answer`, `ans_approved`, `ans_by`) VALUES
-(15, 'What are some of the interesting places to visit in BIET, Jhansi?', 1, 1, 'Some of the interesting places to visit are Jhansi Fort, Garhmau lake, BU, Orchha Fort, Shree Ram Raja Temple, and many more.', 1, 'User'),
-(16, 'Which of the branches are self-financed in BIET, Jhansi?', 1, 1, 'Information Technology and Electrical Engineering are the self financed branches of BIET, Jhansi.', 1, 'User'),
-(17, 'How many councils are there for student activity in BIET, Jhansi?', 1, 1, 'There are 4 councils.', 1, 'User'),
-(18, 'What is the hostel curfew timings?', 1, 1, 'The evening curfew timings for girls, hostels is 6:30 pm whereas for boys , it is 8:00 pm.', 1, 'User'),
-(19, 'How many canteens are there in the campus?', 1, 1, 'There is one general store located near CBI bank where students can buy things of daily need.', 1, 'User'),
-(25, 'Where are Bencolites nowadays?', 1, 1, 'Due to the current pandemic situation, the Bencolites are locked in their homes.', 1, 'User'),
-(27, 'As a newly admitted student of BIET Jhansi, what can I expect in the initial days after reaching?', 1, 0, '', NULL, '');
+(1, 'Who handles data in BIET?', 1, 1, 'Not a particular person .It changes every year.', 1, ''),
+(10, 'Where is director\'s chamber?', NULL, 0, 'NULL', 0, ''),
+(11, 'Where is director\'s chamber?', NULL, 0, 'Near Mech dept.', 1, ''),
+(12, 'fnwoebfibf jwebfibwefbw kebnfbwfn', NULL, 0, '', NULL, ''),
+(13, 'jcvksagdksg scnhbc, bchshc', NULL, 1, 'eb,b fhvb efkewfb ', NULL, 'Muskan'),
+(14, 'what is ur name?', NULL, 1, 'wb rb r rbf fmnb', 1, 'Muskan'),
+(15, 'dfghjk.', NULL, 0, '', NULL, ''),
+(17, 'dfghjkl', NULL, 0, '', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -176,20 +175,19 @@ CREATE TABLE `users` (
   `userid` int(20) NOT NULL,
   `username` varchar(500) NOT NULL,
   `email` varchar(500) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `phone` int(10) NOT NULL
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userid`, `username`, `email`, `password`, `phone`) VALUES
-(1, 'Muskan', 'raimuskan101@gmail.com', 'mahi', 2147483647),
-(2, 'Ashutosh', 'dwivedi.ash007@gmail.com', 'ashu', 2147483647),
-(3, 'Barfi', 'barfi@gmail.com', 'barfi', 2147483647),
-(4, 'Samose ke Chacha', 'samosekiid@gmail.com', 'samosa', 2147483647),
-(7, 'User', 'user@gmail.com', 'user', 1234567890);
+INSERT INTO `users` (`userid`, `username`, `email`, `password`) VALUES
+(1, 'Muskan', 'raimuskan101@gmail.com', 'mahi'),
+(2, 'Ashutosh', 'dwivedi.ash007@gmail.com', 'ashu'),
+(3, 'Barfi', 'barfi@gmail.com', 'barfi'),
+(4, 'Samose ke Chacha', 'samosekiid@gmail.com', 'samosa'),
+(7, 'User', 'user@gmail.com', '1234');
 
 --
 -- Indexes for dumped tables
@@ -258,7 +256,7 @@ ALTER TABLE `club`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -276,7 +274,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `q_and_a`
 --
 ALTER TABLE `q_and_a`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
